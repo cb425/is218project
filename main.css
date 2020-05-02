@@ -1,0 +1,30 @@
+body {
+    background-image: url("https://pbs.twimg.com/media/EJ6IXn5WoAAaox0?format=png&name=small");
+    background-repeat:repeat;
+    background-attachment: fixed;
+    line-height: 2em;
+}
+
+
+
+
+contains {
+    position:relative;
+    width:500px;
+    top:50px;
+    padding:30px 40px 100px 40px;
+    height:100%;
+    display:block;
+    margin: auto;
+    font-family:'Calibri', sans-serif;
+    line-height:2em;
+    background-color:white;
+    border-radius:10px;
+}
+
+contains .title {
+    font-family: Calibri, Arial, sans-serif;
+    font-style: oblique;
+    font-size: 50px;
+    text-align: left;
+}
