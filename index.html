@@ -1,44 +1,61 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <title>Ross Bonifacio</title>
-    <meta charset="utf-8">
-    <script type = "text/javascript" src = "login.js"> </script>
-    <link rel="stylesheet" href="main.css">
-
+<meta charset="UTF-8">
+<title>index.html</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<script src="form.js"> </script>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-<contains>
-    <h1>Sign up</h1>
-    <br>
-    <form id="MyForm">
-
-
-        <br>
-        Username (must be an email)
-        <input type="text" id="email"></input>
-
-        <br>
-        First name:
-        <input type="text" id="name"> </input>
-
-        <br>
-        Last name:
-        <input type="text" id="lastname"> </input>
-
-
-        <p></p>
-        <button type="button" onclick="validateField()">Sign up</button>
-        <input type="button" onclick="reset()" value="Cancel">
-        <p id="forvalidate"></p>
-        <p id="forlastvalidate"></p>
-        <p id="emailvalidate"></p>
-    </form>
-</contains>
-
-
+	
+<div id="slides" class="carousel" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
+      <div class="carousel-caption">
+        <h1 class="display-2">homework tracker</h1>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<!-- to change the main top picture, change the link in img src tag above -->
+<!-- to change the link when clicking submit, change the action="this link" in forms tag -->
+	
+	
+<div class="color-form">
+<div id="form" class="form-all">
+	<p class="subscribe"> sign up! </p>
+	<form class="form" name="form" onsubmit="return validateForm()" onSubmit="returm validateEmail()" action="placeholder.html">
+		<p class="form-text">
+		Username (email): <br>
+		<input type="text" name="username"><br>
+		<br>
+		Password: <br>
+		<input type="text" name="password"> <br>
+		<br>
+		First name:<br>
+		<input type="text" name="FirstName"> <br>
+		<br>
+		Last name: <br>
+		<input type="text" name="LastName"> <br>
+		<br>
+		College: <br>
+		<input type="text" name="college"><br>
+		<br>
+		Major: <br>
+		<input type="text" name="major"><br>
+		<br> <br>
+		
+		<button class="submit" type="submit" value="Subscribe">Sign up!</button>
+		<button class="cancel" type="reset" value="Cancel">Cancel</button>
+		</p>
+	</form>
+</div>
+</div>
+	
+	
 </body>
 </html>
