@@ -1,30 +1,110 @@
-body {
-    background-image: url("https://pbs.twimg.com/media/EJ6IXn5WoAAaox0?format=png&name=small");
-    background-repeat:repeat;
-    background-attachment: fixed;
-    line-height: 2em;
+@charset "UTF-8";
+
+html {
+	color:#222;
+	font-size: 1em;
+	line-height: 1.4;
+	font-family: "Poppins", Verdana, sans-serif; 
+}
+	
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 
-
-
-contains {
-    position:relative;
-    width:500px;
-    top:50px;
-    padding:30px 40px 100px 40px;
-    height:100%;
-    display:block;
-    margin: auto;
-    font-family:'Calibri', sans-serif;
-    line-height:2em;
-    background-color:white;
-    border-radius:10px;
+.welcome {
+  margin: auto;
+  padding-top: 2rem;
 }
 
-contains .title {
-    font-family: Calibri, Arial, sans-serif;
-    font-style: oblique;
-    font-size: 50px;
-    text-align: left;
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+
+.padding {
+  padding-bottom: 2rem;
+}
+
+.about {
+	margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 3px;
+	text-align: center;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 256px;
+	transform: translateY(-50%);
+	width: 805px;
+	left: 274px;
+}
+
+.carousel-caption h1 {
+  font-size: 500%;
+  color:azure;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 1px 1px 10px #222;
+}
+
+.carousel-caption h3 {
+  font-size: 200%;
+  font-weight: 500;
+  text-shadow: 1px 1px 10px #000;
+  padding-bottom: 1rem;
+}
+
+.color-form {
+	padding-left: 250px;
+	padding-right: 250px;
+}
+
+.form-all {
+	background-color: #FFF7F7;
+}
+
+.form {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin: 20px 100px;
+}
+
+.form input {
+	width: 100%;
+}
+
+.subscribe {
+	font-size: 40px;
+	text-align: center;
+	padding-top: 20px; 
+}
+
+.form-text {
+	font-weight: normal; 
+}
+
+.form-all button {
+	border-radius: 15px;
+	background-color: #EDD9D9;
+	border: thin;
+	font-size: 15px;
+	color: inherit;
+	margin-right: 10px;
+	padding: 3px 8px;
 }
