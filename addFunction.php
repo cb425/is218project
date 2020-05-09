@@ -24,13 +24,13 @@
 		}	
 		
 	
-		if ($insertStatement->execute()) {
-		  echo "New record created successfully!";
-		  } else {
-		  echo "Unable to create record.";
-		  }
+	//	if ($insertStatement->execute()) {
+	//	  echo "New record created successfully!";
+	//	  } else {
+	//	  echo "Unable to create record.";
+	//	  }
 
-		header("refresh:2; url=homework_table.php");
+	//	header("refresh:2; url=homework_table.php");
 
 
 ?>
