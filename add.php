@@ -10,25 +10,19 @@
 
 <body>
 	
-		<form class="form" name="form" method="POST">
+		<form class="form" name="form" method="post">
 		<p class="form-text">
-			ID: <br>
-			<input type="number" name="ID"><br>
+			Message:
+			<input type="text" name="Message"> <br>
 			<br>
-			Title: <br>
-			<input type="text" name="Title"> <br>
-			<br>
-			Completed?<br>
+			Completed?
 			<input type="checkbox" name="Completed"> <br>
 			<br>
-			Created: <br>
-			<input type="date" name="Created"> <br>
-			<br>
-			Due: <br>
+			Due:
 			<input type="date" name="Due"><br>
 			<br> <br>
 		
-		<button class="submit" onclick="location.href='addFunction.php'" type="submit" name="add">Add task</button>
+		<button class="submit" value="Insert" onclick="location.href='addFunction.php'" type="submit" name="add">Add task</button>
 		</p>
 	</form>
 	
