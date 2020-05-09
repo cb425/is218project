@@ -10,7 +10,7 @@
 
 <body>
 	
-		<form class="form" name="form" method="get">
+		<form class="form" action='addFunction.php' name="form" method="get">
 		<p class="form-text">
 			Task: <br>
 			<input type="text" name="Task"><br>
