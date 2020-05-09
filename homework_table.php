@@ -6,7 +6,7 @@ require "PDObject.php";
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
-    $statement->closeCursor();
+
 
 
     echo "Tasks: <br>";
@@ -32,7 +32,7 @@ require "PDObject.php";
                     
                   <td>
                   <form method=\"post\">
-                   <button type=\"\"submit\" name=\"delete\"/>
+                   <button type=\"\"submit\" name=\"delete\"/>delete</button></form>
                    </form>
                    </td>  
                     
@@ -56,7 +56,7 @@ require "PDObject.php";
     <td><button id='delete'>Delete</button></td>*/
 
 
-
+$statement->closeCursor();
 
 ?>
 
