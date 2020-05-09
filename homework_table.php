@@ -2,7 +2,7 @@
 require "PDObject.php";
 
 
-    $query = 'SELECT * FROM todos ORDER BY duedate';
+    $query = 'SELECT * FROM todos';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
@@ -10,6 +10,7 @@ require "PDObject.php";
 
 
     echo "Tasks: <br>";
+    echo "(refresh page to see changes) <br>";
     echo "<table width = 45%; border = 1px>
         <tr>
             <th>Task</th>
@@ -23,7 +24,6 @@ require "PDObject.php";
 $operation = 'aa';
 $taskId = 0;
     foreach ($accounts as $result) {
-
         echo "<tr>
                     <td>".$result["id"]."</td>
                     <td>".$result["message"]."</td>
@@ -33,15 +33,19 @@ $taskId = 0;
                     
                   <td>
                   <form method=\"post\">
-                   <button type=\"\"submit\" name=\"delete\"/>delete</button></form>
+                   <button type=\"\"submit\" name=\"delete\"/>Delete</button></form>
                    </form>
                    </td>  
+                   <td>
+                   <a href=\"update.php?id=<?=$result[/"id/"]?>\" class=\"edit\">Edit</a></td>
                     
                </tr>";
         if(isset($_POST["delete"])) {
-            $taskId = $result["id"];
             $operation = 'delete';
+            $taskId = $result["id"];
         }
+
+        unset($_POST["delete"]);
 
 
     }
