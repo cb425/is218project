@@ -38,7 +38,7 @@ try {
                     <td>".$result["createddate"]."</td>
                     <td>".$result["duedate"]."</td>
                     <td><a href='edit.php'> Edit</a></td>
-                    <td><a href='delete.php?id=<?php echo $row[id]; ?>'>Delete</a></td>
+                    <td><a href='delete.php'>Delete</a></td>
                </tr>";
     }
     echo "<tr><th><a href='add.php'>Add task</a></th></tr>";
