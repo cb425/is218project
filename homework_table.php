@@ -39,7 +39,8 @@ require "PDObject.php";
                </tr>";
 
         $taskId = $result["id"];
-        if(isset($_POST['delete'])) {
+
+        if(isset($_POST["delete"])) {
             $operation = 'delete';
         }
 
