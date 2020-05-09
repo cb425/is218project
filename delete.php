@@ -1,14 +1,16 @@
 
 <?php
+require "PDObject.php";
+try{
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $un, $pw);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-function delete($id)
-{
-    global $db;
-
-    $statement = "DELETE FROM todos WHERE id = :message";
-    $statement2 = $db->prepare($statement);
-    $statement2->bindValue(":message" , $id);
-    $statement2->execute();
+    if($operation == "delete"){
+        $query = "DELETE FROM todos WHERE taskId = $taskId";
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        $statement->closeCursor();
+    }
 }
 
 ?>

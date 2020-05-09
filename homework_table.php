@@ -2,10 +2,6 @@
 require "PDObject.php";
 
 
-
-
-try {
-
     $query = 'SELECT * FROM todos ORDER BY duedate';
     $statement = $conn ->prepare($query);
     $statement->execute();
@@ -26,24 +22,42 @@ try {
         </tr>";
 
     foreach ($accounts as $result) {
+        $operation = "aa";
         echo "<tr>
                     <td>".$result["id"]."</td>
                     <td>".$result["message"]."</td>
                     <td>".$result["isdone"]."</td>  
                     <td>".$result["createddate"]."</td>
                     <td>".$result["duedate"]."</td>
-                    <td><a href='edit.php'> Edit</a></td>
-                    <td>Delete</td>
+                    
+                  <td>
+                  <form method=\"post\">
+                   <button type=\"\"submit\" name=\"delete\"/>
+                   </form>
+                   </td>  
+                    
                </tr>";
+
+        $taskId = $result["id"];
+        if(isset($_POST['delete'])) {
+            $operation = 'delete';
+        }
+
+        if($operation == "delete"){
+        $query = "DELETE FROM todos WHERE id = $taskId";
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        $statement->closeCursor();
+        }
+
     }
-    echo "<tr><th><a href='add.php'>Add task</a></th></tr>";
+    /*echo "<tr><th><a href='add.php'>Add task</a></th>
+    <td><a href='edit.php'> Edit</a></td>
+    <td><button id='delete'>Delete</button></td>*/
 
-}
-catch(PDOException $e)
-{
-    echo "Connection failed: " . $e->getMessage();
 
-}
 
 
 ?>
+
+
