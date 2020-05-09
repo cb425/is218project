@@ -1,9 +1,14 @@
 <?php	
-	require PDObject.php;
-	function insertTask($task, $title, $isdone, $createdate, $duedate) {
+	require "PDObject.php"
+	
+		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['add'])) {
+    		insertTask($newTask, $newTitle, $newCompleted, $newCreated, $newDue);
+    	}
+		
+		function insertTask($task, $title, $isdone, $createdate, $duedate) {
 
-		$insertStatement = $my_Db_Connection->prepare("
-			INSERT INTO Students (task, title, isdone, createdate, duedate) 
+		$insertStatement = $my_Db_Connection->prepare(
+			"INSERT INTO Students (task, title, isdone, createdate, duedate) 
 			VALUES (:atask, :atitle, :aisdone, :acreatedate, :aduedate)");
 
 		$insertStatement->bindParam(':atask', $task);
@@ -19,14 +24,12 @@
 		  echo "Unable to create record.";
 		  }
 		}
+
 $newTask = $_GET["Task"];
 $newTitle = $_GET["Title"];
 $newCompleted = $_GET["Completed"];
 $newCreated = $_GET["Created"];
 $newDue = $_GET["Due"];
-
-insertTask($newTask, $newTitle, $newCompleted, $newCreated, $newDue);
-
 
 
 ?>
