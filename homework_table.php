@@ -1,22 +1,17 @@
 <?php
+require "PDObject.php";
 
-$servername = "sql2.njit.edu";// you need to put your assigned server name
-$username = "cb425";// your ucid
-$password = "Megurine123/";// database password
-$dbname = "cb425"; // your ucid is your database name
+
+
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-    echo "<br>";
 
     $query = 'SELECT * FROM todos ORDER BY duedate';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
     $statement->closeCursor();
+
 
     echo "Tasks: <br>";
     echo "<table width = 45%; border = 1px>
@@ -38,19 +33,17 @@ try {
                     <td>".$result["createddate"]."</td>
                     <td>".$result["duedate"]."</td>
                     <td><a href='edit.php'> Edit</a></td>
-                    <td><a href='delete.php'>Delete</a></td>
+                    <td>Delete</td>
                </tr>";
     }
     echo "<tr><th><a href='add.php'>Add task</a></th></tr>";
 
-
-
-
-    echo "<br><br>";
 }
 catch(PDOException $e)
 {
     echo "Connection failed: " . $e->getMessage();
 
 }
+
+
 ?>
