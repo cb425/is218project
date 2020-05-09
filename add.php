@@ -1,37 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>add.php</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<script src="form.js"> </script>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
 	
-<?php	
-	require PDObject.php;
-	function insertTask($task, $title, $isdone, $createdate, $duedate) {
-
-		$servername = "sql2.njit.edu";// you need to put your assigned server name
-		$username = "cb425";// your ucid
-		$password = "Megurine123/";// database password
-		$dbname = "cb425"; // your ucid is your database name
-
-		try {
-			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			echo "Connected successfully";
-			echo "<br>";
-
-		$insertStatement = $my_Db_Connection->prepare("
-			INSERT INTO Students (name, lastname, email) 
-			VALUES (:atask, :atitle, :aisdone, :acreatedate, :aduedate)");
-
-		$insertStatement->bindParam(':atask', $task);
-		$insertStatement->bindParam(':atitle', $title);
-		$insertStatement->bindParam(':aisdone', $isdone);
-		$insertStatement->bindParam(':acreatedate', $createdate);
-		$insertStatement->bindParam(':aduedate', $duedate);
-
-
-		if ($insertStatement->execute()) {
-		  echo "New record created successfully!";
-		} else {
-		  echo "Unable to create record.";
-		}
-
-		}
-	}
-?>
+		<form class="form" name="form" method="get">
+		<p class="form-text">
+			Task: <br>
+			<input type="text" name="Task"><br>
+			<br>
+			Title: <br>
+			<input type="text" name="Title"> <br>
+			<br>
+			Completed?<br>
+			<input type="text" name="Completed"> <br>
+			<br>
+			Created: <br>
+			<input type="text" name="Created"> <br>
+			<br>
+			Due: <br>
+			<input type="text" name="Due"><br>
+			<br> <br>
+		
+		<button class="submit" type="submit">Add task</button>
+		</p>
+	</form>
 	
+	
+</body>
+</html>	
