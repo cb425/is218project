@@ -10,7 +10,7 @@
 
 <body>
 	
-		<form class="form" name="form" method="post">
+		<form class="form" name="form" method="post" >
 		<p class="form-text">
 			Message:
 			<input type="text" name="Message"> <br>
