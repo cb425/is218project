@@ -10,22 +10,22 @@
 
 <body>
 	
-		<form class="form" name="form" method="post" >
-		<p class="form-text">
-			Message:
-			<input type="text" name="Message"> <br>
-			<br>
-			Completed?
-			<input type="checkbox" name="Completed"> <br>
-			<br>
-			Due:
-			<input type="date" name="Due"><br>
-			<br> <br>
-		
-		<button class="submit" value="Insert" onclick="location.href='addFunction.php'" type="submit" name="add">Add task</button>
-		</p>
-	</form>
+<?php
+	include_once 'addFunction.php';
+?>
 	
+		<form action="home.php" method="post">
+		  <div class="container">
+			
+			  <label for="task"> Task: </label>
+			  <input type=text name="task" placeholder="Enter a description:" id="task" required> <br><br>
+			
+			  <label for="duedate"> Due Date: </label>
+				<input type=datetime-local name="duedate" id="duedate" required/> <br><br>
+			
+			  <button type="submit">Add to List!</button>
+		  </div>
+		</form>
 	
 </body>
 </html>	
