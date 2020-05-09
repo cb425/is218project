@@ -20,9 +20,10 @@ require "PDObject.php";
             
         
         </tr>";
-
+$operation = 'aa';
+$taskId = 0;
     foreach ($accounts as $result) {
-        $operation = "aa";
+
         echo "<tr>
                     <td>".$result["id"]."</td>
                     <td>".$result["message"]."</td>
@@ -37,21 +38,24 @@ require "PDObject.php";
                    </td>  
                     
                </tr>";
-
-        $taskId = $result["id"];
-
         if(isset($_POST["delete"])) {
+            $taskId = $result["id"];
             $operation = 'delete';
         }
 
-        if($operation == "delete"){
-        $query = "DELETE FROM todos WHERE id = $taskId";
-        $statement = $conn->prepare($query);
-        $statement->execute();
-        $statement->closeCursor();
-        }
 
     }
+
+
+
+
+
+if($operation == 'delete'){
+    $query = "DELETE FROM todos WHERE id = $taskId";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $statement->closeCursor();
+}
     /*echo "<tr><th><a href='add.php'>Add task</a></th>
     <td><a href='edit.php'> Edit</a></td>
     <td><button id='delete'>Delete</button></td>*/
