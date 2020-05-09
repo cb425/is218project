@@ -20,9 +20,7 @@
 			$newMessage = "";
 			$newCompleted = "";
 			$newDue = "";
-			
-		}	
-		
+		}			
 	
 	//	if ($insertStatement->execute()) {
 	//	  echo "New record created successfully!";
