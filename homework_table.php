@@ -12,7 +12,7 @@ try {
     echo "Connected successfully";
     echo "<br>";
 
-    $query = 'SELECT * FROM todos';
+    $query = 'SELECT * FROM todos ORDER BY duedate';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
@@ -22,25 +22,29 @@ try {
     echo "<table width = 45%; border = 1px>
         <tr>
             <th>Task</th>
-            <th>owneremail</th>
-            <th>ownerid</th>
+            <th>Title</th>
+            <th>isdone</th> 
             <th>createddate</th>
             <th>duedate</th>
-            <th>message</th>
-            <th>isdone</th>           
+            
+        
         </tr>";
 
     foreach ($accounts as $result) {
         echo "<tr>
                     <td>".$result["id"]."</td>
-                    <td>".$result["owneremail"]."</td>
-                    <td>".$result["ownerid"]."</td>
+                    <td>".$result["message"]."</td>
+                    <td>".$result["isdone"]."</td>  
                     <td>".$result["createddate"]."</td>
                     <td>".$result["duedate"]."</td>
-                    <td>".$result["message"]."</td>
-                    <td>".$result["isdone"]."</td>
+                    <td><a href='edit.php'> Edit</a></td>
+                    <td><a href='delete.php?id=<?php echo $row[id]; ?>'>Delete</a></td>
                </tr>";
     }
+    echo "<tr><th><a href='add.php'>Add task</a></th></tr>";
+
+
+
 
     echo "<br><br>";
 }
