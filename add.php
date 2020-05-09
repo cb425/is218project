@@ -14,7 +14,7 @@
 	include_once 'addFunction.php';
 ?>
 	
-		<form action="home.php" method="post">
+		<form action="homework_table.php" method="post">
 		  <div class="container">
 			
 			  <label for="task"> Task: </label>
