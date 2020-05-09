@@ -10,7 +10,7 @@
 
 <body>
 	
-		<form action='addFunction.php' class="form" name="form" method="get">
+		<form class="form" name="form" method="POST">
 		<p class="form-text">
 			Task: <br>
 			<input type="text" name="Task"><br>
@@ -28,7 +28,7 @@
 			<input type="text" name="Due"><br>
 			<br> <br>
 		
-		<button class="submit" type="submit">Add task</button>
+		<button class="submit" onclick="location.href='addFunction.php'" type="submit" name="add">Add task</button>
 		</p>
 	</form>
 	
