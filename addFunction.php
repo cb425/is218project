@@ -5,9 +5,9 @@
 function add_task($Message, $DueDate, $ID) {
     global $db;
     $query = 'INSERT INTO todos
-                 (message, duedate, id)
+                 (message, duedate)
               VALUES
-                 (:message, :duedate, :userid )';
+                 (:message, :duedate)';
     $statement = $db->prepare($query);
     $statement->bindValue(':message', $Message);
     $statement->bindValue(':duedate', $DueDate);
