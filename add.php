@@ -18,7 +18,7 @@
 		  <div class="container">
 			
 			  <label for="task"> Task: </label>
-			  <input type=text name="task" placeholder="Enter a description:" id="task" required> <br><br>
+			  <input type=text name="task" placeholder="Enter a description:" id="message" required> <br><br>
 			
 			  <label for="duedate"> Due Date: </label>
 				<input type=datetime-local name="duedate" id="duedate" required/> <br><br>
