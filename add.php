@@ -12,8 +12,8 @@
 	
 		<form class="form" name="form" method="POST">
 		<p class="form-text">
-			Task: <br>
-			<input type="text" name="Task"><br>
+			ID: <br>
+			<input type="number" name="ID"><br>
 			<br>
 			Title: <br>
 			<input type="text" name="Title"> <br>
