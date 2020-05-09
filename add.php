@@ -19,13 +19,13 @@
 			<input type="text" name="Title"> <br>
 			<br>
 			Completed?<br>
-			<input type="text" name="Completed"> <br>
+			<input type="checkbox" name="Completed"> <br>
 			<br>
 			Created: <br>
-			<input type="text" name="Created"> <br>
+			<input type="date" name="Created"> <br>
 			<br>
 			Due: <br>
-			<input type="text" name="Due"><br>
+			<input type="date" name="Due"><br>
 			<br> <br>
 		
 		<button class="submit" onclick="location.href='addFunction.php'" type="submit" name="add">Add task</button>
