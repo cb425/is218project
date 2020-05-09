@@ -12,7 +12,7 @@ try {
     echo "Connected successfully";
     echo "<br>";
 
-    $query = 'SELECT * FROM accounts where id < 6';
+  /*  $query = 'SELECT * FROM accounts where id < 6';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
@@ -46,7 +46,7 @@ try {
     }
 
     echo "<br>". 'There are '.count($accounts).' record(s) with a user ID less than 6 characters';
-    echo "<br><br>";
+    echo "<br><br>";*/
 }
 catch(PDOException $e)
 {
