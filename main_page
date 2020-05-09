@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Main Page</title>
+<style type="text/css">
+{
+box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    margin-right: 20px;
+	margin-left: 100px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.button {
+background-color:;
+color:;
+font-size:;
+border:;
+padding:;
+}
+</style>
+</head>
+<body>
+<h1>User: John Doe</h1>
+<!--Full Username-->
+<div class="row">
+  <div align="center" class="column" style="line-height: 2.0; background-color: lightgrey">
+    <h2>To-Do
+      <button onclick="sortList()">Sort</button>
+    </h2>
+    <ul style="list-style-type: none" id="sort_col1">
+      <li>Assignment E &nbsp;&nbsp;
+        <button type="button">Add</button>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">✓</button>
+      </li>
+      
+      <!--When "✓" button is chosen, assignment should then appear in 'Completed' column--> 
+      <!--If you want a message to appear when they click the button, add: onclick= "alert('Insert Message Here')"Button Name-->
+      <li>Assignment C &nbsp;&nbsp;
+        <button type="button">Add</button>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">✓</button>
+      </li>
+      <li>Assignment A &nbsp;&nbsp;
+        <button type="button">Add</button>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">✓</button>
+      </li>
+      <li>Assignment B &nbsp;&nbsp;
+        <button type="button">Add</button>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">✓</button>
+      </li>
+      <li>Assignment D &nbsp;&nbsp;
+        <button type="button">Add</button>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">✓</button>
+      </li>
+    </ul>
+  </div>
+  <div align="center" class="column" style="line-height: 2.0; background-color: lightsteelblue">
+    <h2>Completed
+      <button onclick="sortList()">Sort</button>
+    </h2>
+    <ul style="list-style-type: none" id="sort_col2">
+      <li>Assignemnt J &nbsp;&nbsp;
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">X</button>
+      </li>
+      
+      <!--When "X" button is chosen, assignment should then appear in 'To-Do' column-->
+      <li>Assignment F &nbsp;&nbsp;
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">X</button>
+      </li>
+      <li>Assignment G &nbsp;&nbsp;
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">X</button>
+      </li>
+      <li>Assignment I &nbsp;&nbsp;
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">X</button>
+      </li>
+      <li>Assignment H &nbsp;&nbsp;
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+        <button type="button">X</button>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--The following is Javascript to organize the assignments by chrological order (credit to w3schools.com)--> 
+<script>
+function sortList() {
+  var list, i, switching, b, shouldSwitch;
+  list =  document.getElementById("sort_col1"),
+	document.getElementById("sort_col2");
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    // Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      // start by saying there should be no switching:
+      shouldSwitch = false;
+      /* check if the next item should
+      switch place with the current item: */
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /* if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop: */
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark the switch as done: */
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+</body>
+</html>
