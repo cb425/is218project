@@ -8,7 +8,7 @@
 		function insertTask($task, $title, $isdone, $createdate, $duedate) {
 
 		$insertStatement = $my_Db_Connection->prepare(
-			"INSERT INTO Students (task, title, isdone, createdate, duedate) 
+			"INSERT INTO todos (task, title, isdone, createdate, duedate) 
 			VALUES (:atask, :atitle, :aisdone, :acreatedate, :aduedate)");
 
 		$insertStatement->bindParam(':atask', $task);
