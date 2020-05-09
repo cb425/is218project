@@ -2,16 +2,16 @@
 	require "PDObject.php"
 	
 		if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['add'])) {
-    		insertTask($newTask, $newTitle, $newCompleted, $newCreated, $newDue);
+    		insertTask($newID, $newTitle, $newCompleted, $newCreated, $newDue);
     	}
 		
-		function insertTask($task, $title, $isdone, $createdate, $duedate) {
+		function insertTask($ID, $title, $isdone, $createdate, $duedate) {
 
 		$insertStatement = $my_Db_Connection->prepare(
-			"INSERT INTO todos (task, title, isdone, createdate, duedate) 
+			"INSERT INTO todos (id, message, isdone, createdate, duedate) 
 			VALUES (:atask, :atitle, :aisdone, :acreatedate, :aduedate)");
 
-		$insertStatement->bindParam(':atask', $task);
+		$insertStatement->bindParam(':aID', $ID);
 		$insertStatement->bindParam(':atitle', $title);
 		$insertStatement->bindParam(':aisdone', $isdone);
 		$insertStatement->bindParam(':acreatedate', $createdate);
@@ -25,7 +25,7 @@
 		  }
 		}
 
-$newTask = $_GET["Task"];
+$newTask = $_GET["ID"];
 $newTitle = $_GET["Title"];
 $newCompleted = $_GET["Completed"];
 $newCreated = $_GET["Created"];
