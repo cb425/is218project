@@ -1,85 +1,49 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>login.html</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-<script src="form.js"> </script>
-<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
-	
-	<?php
-require "PDObject.php";
-	
-class TodosDB {
+<?php
 
-    private function __construct() {}
+if (isset($_GET['id'])) {
+    if(!empty($_POST["save"])) {
+        require "PDObject.php";
+        $sql = "UPDATE todos SET title =:title, message = :message, duedate= :duedate  WHERE id=". $_GET['id'];
+        $pdo_statement = $conn->prepare( $sql );
 
-    public static function getTodoById($id) {
-
-        $db = Database::getDB();
-
-        $list = array();
-
-        $query = 'SELECT * FROM todos WHERE id = :id';
-        $statement = $db->prepare($query);
-        $statement->bindValue(":id", $id);
-        $statement->execute();
-        $todo = $statement->fetch();
-        $statement->closeCursor();
-
-        $user = new Todo($todo['id'], $todo['message'], $todo['createddate'], $todo['duedate'], $todo['isdone']);
-
-
-        return $user;
+        $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate']) );
+    if (!empty($result) ){
+        header('location:homework_table.php');
     }
+    }
+}
 
-} //end class
+else {
+    exit('No ID specified!');
+}
 
 ?>
-	
-	
+<html>
+<head>
+    <title>Add task</title>
+    <script src="form.js"> </script>
+</head>
 <body>
-    <main class="text-center opac">
-        <h1>Edit A To-Do Item</h1>
+<div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
-        <form action="index.php" method="post" id="todo_form">
+<h1>Add task</h1>
+<form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
+    <label>Title: </label><br>
+    <input  type="text" name="title" id="title" required/>
+    <br>
+    <br>
+    <label>Description: </label><br>
+    <textarea name="message" id="message" rows="5" required></textarea>
 
-            <?php
-			
-            $id = filter_input(INPUT_GET, 'id');
-            $todo = TodosDB::getTodoById($id); 
+    <br>
+    <br>
+    <label for="duedate"> Due Date: </label>
+    <br>
+    <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
-            $cdOriginal = $todo->getCreateDate();
-            $ddOriginal = $todo->getDueDate();
-            $pattern = '/ [0-9]{2}:[0-9]{2}:[0-9]{2}/';
+    <div class="demo-form-row">
+        <input name="save" type="submit" value="Add"">
 
-            $cdDateOnly = preg_replace($pattern, "", $cdOriginal);
-            $ddDateOnly = preg_replace($pattern, "", $ddOriginal);
-            ?>
-			
-            <input type="hidden" name="action" value="edit_todo">
-            <input type="hidden" name="itemid" value="<?php echo $id; ?>">
-
-            <br>
-            <label>Message:</label>
-            <input type="text" class="my-2" name="message" value="<?php echo $todo->getDescription(); ?>">
-            <br>
-            <label>Created Date:</label>
-            <input type="date" class="my-2" name="created" value="<?php echo $cdDateOnly ?>">
-            <br>
-            <label>Due Date:</label>
-            <input type="date" class="my-2" name="due" value="<?php echo $ddDateOnly ?>">
-            <br>
-
-            <input type="submit" class="my-2"value="Submit">
-        </form>
-
-        <p class="mt-1"><a class="btn btn-dark" href="?action=list_todo">Back</a></p>
-
-    </main>
-
-	</body>
-</html>
-
-
+</form>
+</div>
+</body></html>
