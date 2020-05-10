@@ -35,18 +35,21 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-<div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
+<center>
 
-<div id="slides" class="carousel" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
-            <div class="carousel-caption">
-                <h1 class="display-2">homework tracker</h1>
+
+    <div id="slides" class="carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
+                <div class="carousel-caption">
+                    <h1 class="display-2">homework tracker</h1>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <a href="homework_table.php" class="addbutton">Back to List</a>
+</center>
 <h1>Edit Task</h1>
 <form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
     <label>Title: </label><br>
