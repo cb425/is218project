@@ -22,7 +22,7 @@ if(!empty($_POST["add_record"])) {
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
 <h1>Sign up!</h1>
-<form action="homework_table.php" method="POST" name="signup" onsubmit="return validateForm()" onSubmit="return validateEmail()">
+<form action="" method="POST" name="signup" onsubmit="return validateForm()" onSubmit="return validateEmail()">
         <label>Email: </label><br>
         <input  type=email name="email" id="email" required/>
         <br>
