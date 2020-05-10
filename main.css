@@ -42,7 +42,7 @@ hr {
 }
 
 .carousel-inner img {
-	width: 100%; /* width of container */
+	width: 98%; /* width of container */
 	height: 300px; /* height of container */
 	object-fit: cover;
 	object-position: bottom;

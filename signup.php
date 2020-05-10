@@ -23,7 +23,7 @@ if(!empty($_POST["add_record"])) {
 <div id="slides" class="carousel" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://i.pinimg.com/originals/3e/33/42/3e334246154df6e0446ff2b9c203cf68.jpg" alt="img"/>
+            <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="img"/>
             <div class="carousel-caption">
                 <h1 class="display-2">homework tracker</h1>
             </div>
