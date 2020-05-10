@@ -108,3 +108,22 @@ hr {
 	margin-right: 10px;
 	padding: 3px 8px;
 }
+
+table {
+	border-radius: 5px;
+	border: 2px solid black;
+	width: 550px!important;
+}
+
+td {
+
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+
+}
+
+th {
+	border-radius: 5px;
+	border: 1px solid grey;
+
+}

@@ -1,7 +1,7 @@
 <?php
     require "PDObject.php";
 
-    $query = 'SELECT * FROM todos';
+    $query = 'SELECT * FROM todos ORDER BY duedate';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
@@ -22,13 +22,14 @@
 <p>refresh page to see changes</p>
 
 <!-- ENTIRE TABLE -->
-<table width = 45%; border = 1px>
+<h3>Upcoming Tasks</h3>
+<table>
     <tr>
         <th>ID</th>
         <th>Title</th>
         <th>Description</th>
-        <th>createddate</th>
-        <th>duedate</th>
+        <th>Date Created</th>
+        <th>Due Date</th>
         <th>Completed?</th>
     </tr>
 <?php
@@ -62,17 +63,19 @@ foreach ($accounts as $result) {
                </tr>";
 }
 ?>
+</table>
     <p><a href="add.php">Add a task</a></p>
 
 
     <!-- INCOMPLETE TASK -->
-    <table width = 45%; border = 1px>
+    <h3>Incomplete Tasks</h3>
+    <table>
         <tr>
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
-            <th>createddate</th>
-            <th>duedate</th>
+            <th>Date Created</th>
+            <th>Due Date</th>
             <th>Completed?</th>
 
 
@@ -100,16 +103,17 @@ foreach ($accounts as $result) {
         }
 
         ?>
-        <p>Incomplete Tasks</p>
-        <!-- COMPLETE TASK -->
+    </table>
 
-        <table width = 45%; border = 1px>
+        <!-- COMPLETE TASK -->
+        <h3>Complete Tasks</h3>
+        <table>
             <tr>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>createddate</th>
-                <th>duedate</th>
+                <th>Date Created</th>
+                <th>Due Date</th>
                 <th>Completed?</th>
 
 
@@ -137,7 +141,9 @@ foreach ($accounts as $result) {
             }
 
             ?>
-            <p>Complete Tasks</p>
+
+
+        </table>
 
 
 
