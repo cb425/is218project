@@ -17,7 +17,7 @@ class TodosDB {
 
     public static function getTodoById($id) {
 
-        $db = Database::getDB();
+        $db = $conn;
 
         $list = array();
 
@@ -29,7 +29,6 @@ class TodosDB {
         $statement->closeCursor();
 
         $user = new Todo($todo['id'], $todo['message'], $todo['createddate'], $todo['duedate'], $todo['isdone']);
-
 
         return $user;
     }
@@ -63,19 +62,17 @@ class TodosDB {
 
             <br>
             <label>Message:</label>
-            <input type="text" class="my-2" name="message" value="<?php echo $todo->getDescription(); ?>">
+            <input type="text" name="message" value="<?php echo $todo->getDescription(); ?>">
             <br>
             <label>Created Date:</label>
-            <input type="date" class="my-2" name="created" value="<?php echo $cdDateOnly ?>">
+            <input type="date"  name="created" value="<?php echo $cdDateOnly ?>">
             <br>
             <label>Due Date:</label>
-            <input type="date" class="my-2" name="due" value="<?php echo $ddDateOnly ?>">
+            <input type="date"  name="due" value="<?php echo $ddDateOnly ?>">
             <br>
 
-            <input type="submit" class="my-2"value="Submit">
+            <input type="submit" value="Submit">
         </form>
-
-        <p class="mt-1"><a class="btn btn-dark" href="?action=list_todo">Back</a></p>
 
     </main>
 
