@@ -64,3 +64,13 @@ function validateForm() {
 		return false;
 	}
 }
+
+function validateDescription() {
+	var themessage = document.forms["addTask"]["message"].value; 
+	
+	if (themessage.length > 144) {
+		alert("Please limit your description to 144 characters.");
+		return false;
+	} 
+}
+
