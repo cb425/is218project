@@ -18,14 +18,16 @@
 </head>
 
 <body>
-<h1>Task list</h1>
+<h1>Homework Tracker</h1>
 <p>refresh page to see changes</p>
 
+<center>
+<container>
 <!-- ENTIRE TABLE -->
-<h3>Upcoming Tasks</h3>
+<h3>Upcoming Assignments</h3>
 <table>
     <tr>
-        <th>ID</th>
+
         <th>Title</th>
         <th>Description</th>
         <th>Date Created</th>
@@ -36,7 +38,7 @@
 foreach ($accounts as $result) {
     $task = $result["id"];
     echo "<tr>
-                    <td>" . $result["id"] . "</td>
+
                     <td>" . $result["title"] . "</td>
                     <td>" . $result["message"] . "</td> 
                     <td>" . $result["createddate"] . "</td>
@@ -64,14 +66,14 @@ foreach ($accounts as $result) {
 }
 ?>
 </table>
-    <p><a href="add.php">Add a task</a></p>
+    <p><a id="addbutton" href="add.php">Add a task</a></p>
 
 
     <!-- INCOMPLETE TASK -->
-    <h3>Incomplete Tasks</h3>
+    <h3>Incomplete Assignments</h3>
     <table>
         <tr>
-            <th>ID</th>
+
             <th>Title</th>
             <th>Description</th>
             <th>Date Created</th>
@@ -87,7 +89,7 @@ foreach ($accounts as $result) {
             $task = $result["id"];
             if($result["isdone"] == NULL) {
                 echo "<tr>
-                    <td>" . $result["id"] . "</td>
+
                     <td>" . $result["title"] . "</td>
                     <td>" . $result["message"] . "</td> 
                     <td>" . $result["createddate"] . "</td>
@@ -106,10 +108,10 @@ foreach ($accounts as $result) {
     </table>
 
         <!-- COMPLETE TASK -->
-        <h3>Complete Tasks</h3>
+        <h3>Complete Assignments</h3>
         <table>
             <tr>
-                <th>ID</th>
+
                 <th>Title</th>
                 <th>Description</th>
                 <th>Date Created</th>
@@ -125,7 +127,7 @@ foreach ($accounts as $result) {
                 $task = $result["id"];
                 if($result["isdone"] == "on") {
                     echo "<tr>
-                    <td>" . $result["id"] . "</td>
+
                     <td>" . $result["title"] . "</td>
                     <td>" . $result["message"] . "</td> 
                     <td>" . $result["createddate"] . "</td>
@@ -144,7 +146,14 @@ foreach ($accounts as $result) {
 
 
         </table>
+    <p><br></p><p></p>
+</container>
 
+    <div class="footer">
+        <p>Names: Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+    </div>
+
+</center>
 
 
 
