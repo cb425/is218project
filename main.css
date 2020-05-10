@@ -42,22 +42,21 @@ hr {
 }
 
 .carousel-inner img {
-	width: 98%; /* width of container */
-	height: 300px; /* height of container */
+	width: 1000px; /* width of container */
+	height: 400px; /* height of container */
 	object-fit: cover;
-	object-position: bottom;
 }
 
 .carousel-caption {
 	position: absolute;
-	top: 200px;
+	top: 256px;
 	transform: translateY(-50%);
 	width: 805px;
 	left: 274px;
 }
 
-.carousel-caption h2 {
-  font-size: 400%;
+.carousel-caption h1 {
+  font-size: 500%;
   color:azure;
   text-transform: uppercase;
   text-align: center;
@@ -72,14 +71,12 @@ hr {
 }
 
 .color-form {
-	margin-top: 75px;
 	padding-left: 250px;
 	padding-right: 250px;
 }
 
 .form-all {
-	background-color: pink;
-	border-radius: 50px;
+	background-color: #FFF7F7;
 }
 
 .form {
@@ -99,12 +96,6 @@ hr {
 	padding-top: 20px; 
 }
 
-.addatask {
-	font-size: 40px;
-	text-align: center;
-	padding-top: 20px;
-}
-
 .form-text {
 	font-weight: normal; 
 }
@@ -121,32 +112,41 @@ hr {
 
 table {
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 2px solid #d786a5;
 	width: 550px!important;
+	background-color:pink;
+
+
 }
 
 td {
 
+	font-size: 16px;
+	background-color: white;
 	border-radius: 5px;
-	border: 1px solid lightgrey;
-
+	border-width: 2px;
+	border-style: solid;
+	border-color: pink;
+	padding: 5px 15px;
+	margin: 5px;
 }
 
 th {
+	font-size: 16px;
+	width: 150px;
+	color: white;
+	background-color: rgb(215, 134, 165);
 	border-radius: 5px;
-	border: 1px solid grey;
+	border-width: 2px;
+	border-style: solid;
+	border-color: pink;
+	padding: 10px
 
 }
 
-.footer {
-	margin-top: 150px;
-	width: 100%;
-	background-color: #272727;
-	color: #FFF7F7;
-	height: 100px;
-}
-
-.footer p {
-	text-align: center;
-	padding-top: 48px;
+container
+{
+	display:block;
+	overflow:auto;
+	width:750px;
 }
