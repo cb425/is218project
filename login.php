@@ -1,10 +1,10 @@
 <?php
 if(!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO accounts (email, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO accounts (email, password) VALUES (:email, :password)";
     $pdo_statement = $conn->prepare( $sql );
 
-    $result = $pdo_statement->execute( array(':username'=>$_POST['email'], ':password'=>$_POST['password']) );
+    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':password'=>$_POST['password']) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
@@ -43,10 +43,10 @@ if(!empty($_POST["add_record"])) {
         <p class="subscribe"> login </p>
         <form class="form" action="" method="POST" name="LoginForm" onsubmit="return validateLogin()">
             <p class="form-text">
-                Username (email): <br>
-                <input type=text name="username"><br>
+                <label> Username (email):</label> <br>
+                <input type=text name="email"><br>
                 <br>
-                Password: <br>
+                <label>Password: </label><br>
                 <input type=password name="password"> <br>
                 <br> <br>
 
