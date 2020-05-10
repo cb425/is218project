@@ -17,6 +17,8 @@ if (!empty($_POST["add_record"])) {
     <link href="main.css" rel="stylesheet" type="text/css">
     <script src="form.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -30,6 +32,9 @@ if (!empty($_POST["add_record"])) {
         </div>
     </div>
 </div>
+
+<p></p>
+<p></p>
 
 
 <div class="color-form">

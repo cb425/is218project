@@ -21,6 +21,23 @@
 
 <body>
 
+<nav class="navbar navbar-expand-md navbar-dark bg-pink">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="btn btn-colors" href="signout.html" role="button" aria-haspopup="true" aria-expanded="false">
+                        Sign out
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <?php
 
             require_once"PDObject.php";
@@ -31,7 +48,7 @@
             $statement->closeCursor();
 
             echo "User: ". $theData['fname']. " " . $theData['lname'];
-            echo "<br><a href=\"signout.html\">Signout</a>";
+            //echo "<br><a href=\"signout.html\">Signout</a>";
             ?>
 <center>
     <container>

@@ -35,6 +35,25 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-pink">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="btn btn-colors" href="signout.html" role="button" aria-haspopup="true" aria-expanded="false">
+                        Sign out
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 <center>
 
 
