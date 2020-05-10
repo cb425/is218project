@@ -40,7 +40,7 @@
 
 
 <!-- ENTIRE TABLE -->
-<h3>Upcoming Assignments</h3>
+<h3>All Assignments</h3>
 <table>
     <tr>
 
