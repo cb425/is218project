@@ -10,10 +10,14 @@ if(!empty($_POST["add_record"])) {
     }
 }
 ?>
+<!doctype html>
 <html>
 <head>
-    <title>Add task</title>
-	<script src="form.js"> </script>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="form.js"> </script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
