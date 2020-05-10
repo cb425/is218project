@@ -1,30 +1,35 @@
 <?php
-require "PDObject.php";
+if(!empty($_POST["add_record"])) {
+    require "PDObject.php";
+    $sql = "INSERT INTO todos (message,duedate) VALUES ( :message, :duedate)";
+    $pdo_statement = $conn->prepare( $sql );
 
-$pdo = pdo_connect_mysql();
-$msg = '';
-// Check if the contact id exists, for example update.php?id=1 will get the contact with the id of 1
-if (isset($_GET['id'])) {
-    if (!empty($_POST)) {
-        // This part is similar to the create.php, but instead we update a record and not insert
-        $id = isset($_POST['id']) ? $_POST['id'] : NULL;
-        $name = isset($_POST['name']) ? $_POST['name'] : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-        $title = isset($_POST['title']) ? $_POST['title'] : '';
-        $created = isset($_POST['created']) ? $_POST['created'] : date('Y-m-d H:i:s');
-        // Update the record
-        $stmt = $pdo->prepare('UPDATE contacts SET id = ?, name = ?, email = ?, phone = ?, title = ?, created = ? WHERE id = ?');
-        $stmt->execute([$id, $name, $email, $phone, $title, $created, $_GET['id']]);
-        $msg = 'Updated Successfully!';
+    $result = $pdo_statement->execute( array( ':message'=>$_POST['message'],':duedate'=>$_POST['duedate']) );
+    if (!empty($result) ){
+        header('location:index.php');
     }
-    // Get the contact from the contacts table
-    $stmt = $pdo->prepare('SELECT * FROM contacts WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$contact) {
-        exit('Contact doesn\'t exist with that ID!');
-    }
-} else {
-    exit('No ID specified!');
 }
+?>
+<html>
+<head>
+    <title>PHP PDO CRUD - Add New Record</title>
+</head>
+<body>
+<div style="margin:20px 0px;text-align:right;"><a href="index.php" class="button_link">Back to List</a></div>
+
+    <h1>Add New Record</h1>
+    <form name="frmAdd" action="" method="POST">
+
+        <div class="demo-form-row">
+            <label>Description: </label><br>
+            <textarea name="message" class="demo-form-field" rows="5" required ></textarea>
+        </div>
+
+        <label for="duedate"> Due Date: </label>
+        <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
+
+        <div class="demo-form-row">
+            <input name="add_record" type="submit" value="Add" class="demo-form-submit">
+
+    </form>
+</div>

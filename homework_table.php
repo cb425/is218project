@@ -24,6 +24,7 @@ require "PDObject.php";
 $operation = 'aa';
 $taskId = 0;
     foreach ($accounts as $result) {
+        $task = $result["id"];
         echo "<tr>
                     <td>".$result["id"]."</td>
                     <td>".$result["message"]."</td>
@@ -37,7 +38,7 @@ $taskId = 0;
                    </form>
                    </td>  
                    <td>
-                   <a href=\"update.php?id=<?=$result[/"id/"]?>\" class=\"edit\">Edit</a></td>
+                   <a href=\"update.php?id=<?=$task?>\" class=\"edit\">Edit</a></td>
                     
                </tr>";
         if(isset($_POST["delete"])) {
@@ -68,5 +69,7 @@ if($operation == 'delete'){
 $statement->closeCursor();
 
 ?>
+
+
 
 
