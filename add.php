@@ -22,6 +22,18 @@ if(!empty($_POST["add_record"])) {
 <body>
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
+<div class="carousel" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="carousel-img.jpg" alt="img"/>
+            <div class="carousel-caption">
+                <h1 class="display-2">homework tracker</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <h1>Add task</h1>
 <form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
         <label>Title: </label><br>

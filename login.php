@@ -28,7 +28,7 @@
 <div class="color-form">
     <div id="form" class="form-all">
         <p class="subscribe"> login </p>
-        <form class="form" name="form" onsubmit="return validateForm()" onSubmit="returm validateEmail()">
+        <form class="form" name="form" onsubmit="return validateForm()" onSubmit="return validateEmail()">
             <p class="form-text">
                 Username (email): <br>
                 <input type="text" name="username"><br>
