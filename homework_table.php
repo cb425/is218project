@@ -31,6 +31,7 @@
             $statement->closeCursor();
 
             echo "User: ". $theData['fname']. " " . $theData['lname'];
+            echo "<br><a href=\"signout.html\">Signout";
             ?>
 <center>
     <container>
