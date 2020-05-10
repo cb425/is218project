@@ -7,10 +7,8 @@ function validateForm() {
 	var major = document.forms["form"]["major"].value;
 	var college = document.forms["form"]["college"].value;
 	var password = document.forms["form"]["password"].value;
-	var username = document.forms["form"]["username"].value;
 	var emailSign = email.includes("@");
-	var emailSignLogin = username.includes("@");
-	
+
 	var fnamevalid1 = fname.includes("1");
 	var fnamevalid2 = fname.includes("2");
 	var fnamevalid3 = fname.includes("3");
@@ -53,10 +51,6 @@ function validateForm() {
 		alert("Please enter a valid email address.")
 		return false;
 	}
-	else if (emailSignLogin == false) {
-		alert("Please enter a valid email address.")
-		return false;
-	}
 	else if (college == "") {
 		alert("College must be filled out.")
 		return false;
@@ -80,3 +74,18 @@ function validateDescription() {
 	} 
 }
 
+function validateLogin() {
+	var username = document.forms["LoginForm"]["username"].value;
+	var emailSignLogin = username.includes("@");
+
+
+	if (username == "") {
+		alert ("Please enter an email address");
+		return false;
+	}
+	else if (emailSignLogin == false) {
+		alert("Please enter a valid email address.")
+		return false;
+	}
+
+}

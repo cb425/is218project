@@ -28,17 +28,17 @@
 <div class="color-form">
     <div id="form" class="form-all">
         <p class="subscribe"> login </p>
-        <form class="form" name="form" onsubmit="return validateForm()">
+        <form class="form" name="LoginForm" onsubmit="return validateLogin()">
             <p class="form-text">
                 Username (email): <br>
-                <input type="text" name="username"><br>
+                <input type=text name="username"><br>
                 <br>
                 Password: <br>
-                <input type="text" name="password"> <br>
+                <input type=password name="password"> <br>
                 <br> <br>
 
-                <button class="submit" type="submit" value="login" formaction="placeholder.html">Login</button>
-                <button class="signup" type="submit" value="SignUp" formaction="signup.html">Sign Up!</button>
+                <button class="submit" type=submit value="login" formaction="homework_table.php">Login</button>
+                <button class="signup" type=submit value="SignUp" formaction="signup.html">Sign Up!</button>
             </p>
         </form>
     </div>
