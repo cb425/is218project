@@ -20,6 +20,17 @@ if(!empty($_POST["add_record"])) {
 </head>
 <body>
 
+<div id="slides" class="carousel" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://i.pinimg.com/originals/3e/33/42/3e334246154df6e0446ff2b9c203cf68.jpg" alt="img"/>
+            <div class="carousel-caption">
+                <h1 class="display-2">homework tracker</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <h1>Sign up!</h1>
 <form action="" method="POST" name="signup" onsubmit="return validateForm()" onSubmit="return validateEmail()">
