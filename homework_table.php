@@ -1,13 +1,10 @@
 <?php
-require "PDObject.php";
-
+    require "PDObject.php";
 
     $query = 'SELECT * FROM todos';
     $statement = $conn ->prepare($query);
     $statement->execute();
     $accounts = $statement->fetchAll();
-
-
 
     echo "Tasks: <br>";
     echo "(refresh page to see changes) <br>";
@@ -22,8 +19,7 @@ require "PDObject.php";
             
         
         </tr>";
-$operation = 'aa';
-$taskId = 0;
+
     foreach ($accounts as $result) {
         $task = $result["id"];
         echo "<tr>
@@ -40,29 +36,11 @@ $taskId = 0;
                    <a href=\"edit.php?id=$task\" class=\"edit\">Edit</a></td>
                     
                </tr>";
-        if(isset($_POST["delete"])) {
-            $operation = 'delete';
-            $taskId = $result["id"];
-        }
-
-        unset($_POST["delete"]);
 
 
     }
 
 
-
-
-
-if($operation == 'delete'){
-    $query = "DELETE FROM todos WHERE id = $taskId";
-    $statement = $conn->prepare($query);
-    $statement->execute();
-    $statement->closeCursor();
-}
-    /*echo "<tr><th><a href='add.php'>Add task</a></th>
-    <td><a href='edit.php'> Edit</a></td>
-    <td><button id='delete'>Delete</button></td>*/
 
 
 $statement->closeCursor();

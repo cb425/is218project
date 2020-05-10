@@ -20,7 +20,7 @@ else {
 ?>
 <html>
 <head>
-    <title>Add task</title>
+    <title>Edit Task <?php> $_GET['id']</?></title>
     <script src="form.js"> </script>
 </head>
 <body>
