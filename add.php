@@ -27,7 +27,7 @@ if (!empty($_POST["add_record"])) {
         <div class="carousel-item active">
             <img src="carousel-img.jpg" alt="img"/>
             <div class="carousel-caption">
-                <h1 class="display-2">homework tracker</h1>
+                <h2 class="display-2">homework tracker</h2>
             </div>
         </div>
     </div>
@@ -53,6 +53,7 @@ if (!empty($_POST["add_record"])) {
             <input type="checkbox" id="isdone" name="isdone"/>
             <br><br>
             <input name="add_record" type="submit" value="Add"">
+            <br><br>
         </form>
     </div>
 </div>
