@@ -5,6 +5,8 @@ $username = "cb425";// your ucid
 $password = "Megurine123/";// database password
 $dbname = "cb425"; // your ucid is your database name
 
+date_default_timezone_set('America/New_York');
+
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
