@@ -1,5 +1,5 @@
 <?php
-if(!empty($_POST["add"])) {
+if(!empty($_POST["add_record"])) {
     require "PDObject.php";
     $sql = "INSERT INTO todos (message,duedate, createddate) VALUES ( :message, :duedate, :createddate)";
     $pdo_statement = $conn->prepare( $sql );
@@ -13,12 +13,13 @@ if(!empty($_POST["add"])) {
 <html>
 <head>
     <title>Add task</title>
+	<script src="form.js"> </script>
 </head>
 <body>
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
 <h1>Add task</h1>
-<form action="" method="POST">
+<form action="" method="POST" name="addTask">
 
         <label>Description: </label><br>
         <textarea name="message" class="demo-form-field" rows="5" required ></textarea>
@@ -28,7 +29,7 @@ if(!empty($_POST["add"])) {
         <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
         <div class="demo-form-row">
-        <input name="add" type="submit" value="Add" class="demo-form-submit">
+        <input name="add_record" type="submit" value="Add" class="demo-form-submit">
 
 </form>
 </div>
