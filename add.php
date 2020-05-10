@@ -1,10 +1,10 @@
 <?php
 if(!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO todos (message,duedate, createddate) VALUES ( :message, :duedate, :createddate)";
+    $sql = "INSERT INTO todos (title, message,duedate, createddate) VALUES (:title, :message, :duedate, :createddate)";
     $pdo_statement = $conn->prepare( $sql );
 
-    $result = $pdo_statement->execute( array( ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':createddate' =>date("Y-m-d h:i:s") ) );
+    $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':createddate' =>date("Y-m-d h:i:s") ) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
@@ -20,12 +20,17 @@ if(!empty($_POST["add_record"])) {
 
 <h1>Add task</h1>
 <form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
-
+        <label>Title: </label><br>
+        <input  type="text" name="title" id="title" required/>
+        <br>
+        <br>
         <label>Description: </label><br>
-        <textarea name="message" class="demo-form-field" rows="5" required ></textarea>
+        <textarea name="message" id="message" rows="5" required ></textarea>
 
-
+        <br>
+        <br>
         <label for="duedate"> Due Date: </label>
+        <br>
         <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
         <div class="demo-form-row">
