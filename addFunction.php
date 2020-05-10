@@ -1,14 +1,14 @@
-<?php	
+<?php
 	require "PDObject.php";
 
 
 function add_task($Message, $DueDate, $ID) {
-    global $db;
+	global $conn;
     $query = 'INSERT INTO todos
                  (message, duedate)
               VALUES
                  (:message, :duedate)';
-    $statement = $db->prepare($query);
+    $statement = $conn->prepare($query);
     $statement->bindValue(':message', $Message);
     $statement->bindValue(':duedate', $DueDate);
     $statement->execute();

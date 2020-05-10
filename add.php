@@ -11,7 +11,7 @@
 <body>
 	
 <?php
-	include_once 'addFunction.php';
+	require 'addFunction.php';
 ?>
 	
 		<form action="homework_table.php" method="post">
