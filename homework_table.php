@@ -183,6 +183,7 @@ foreach ($accounts as $result) {
                </tr>";
 }
 ?>
+    <p><a href="add.php">Add a task</a></p>
 
 
     <!-- INCOMPLETE TASK -->
