@@ -1,26 +1,3 @@
-<?php
-if(!empty($_POST["add_record"])) {
-    require "PDObject.php";
-    $sql = "INSERT INTO accounts (email, fname, lname, phone, gender, password, college, major) VALUES (:email, :fname, :lname, :phone, :gender, :password, :college, :major)";
-    $pdo_statement = $conn->prepare( $sql );
-
-    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':fname'=>$_POST['fname'],':lname'=>$_POST['lname'], ':phone'=>$_POST['phone'], ':gender'=>$_POST['gender'], ':password'=>$_POST['password'], ':college'=>$_POST['college'], ':major'=>$_POST['major']) );
-    if (!empty($result) ){
-        header('location:homework_table.php');
-    }
-}
-?>
-
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>login.html</title>
-    <link href="main.css" rel="stylesheet" type="text/css">
-    <script src="form.js"> </script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
-
 <body>
 
 <div id="slides" class="carousel" data-ride="carousel">
@@ -56,10 +33,7 @@ if(!empty($_POST["add_record"])) {
         <form style="padding:10px;" class="form" name="signupbutton">
             <button class="signup" type="submit" value="SignUp" formaction="signup.php">Sign Up!</button>
         </form>
-        <p></p><br>
     </div>
 </div>
-
-
 </body>
 </html>
