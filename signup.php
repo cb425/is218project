@@ -36,45 +36,44 @@ if (!empty($_POST["add_record"])) {
     <div id="form" class="form-all">
         <p class="subscribe"> sign up! </p>
         <form action="" method="POST" name="signup" onsubmit="return validateForm()">
-            <label>Email: </label><br>
-            <input type=email name="email" id="email" required/>
-            <br>
-            <br>
-            <label>First Name: </label><br>
-            <input type=text name="fname" id="fname" required/>
-            <br>
-            <br>
-            <label> Last Name: </label>
-            <br>
-            <input type=text name="lname" id="lname" required/>
-            <br>
-            <br>
-            <label>Phone: </label><br>
-            <input type="number" name="phone" id="phone" required/>
-            <br>
-            <br>
-            <label>Gender: </label><br>
-            <input type="text" name="gender" id="gender" required/>
-            <br>
-            <br>
-            <label>Password: </label><br>
-            <input type=password name="password" id="password" required/>
-            <br>
-            <br>
-            <label>College: </label><br>
-            <input type=text name="college" id="college" required/>
-            <br>
-            <br>
-            <label>Major: </label><br>
-            <input type=text name="major" id="major" required/>
-            <br>
-            <br>
+            <p class="form-text" class="subscribe">
+                <label>Email: </label><br>
+                <input type=email name="email" id="email" required/>
+                <br><br>
+                <label>First Name: </label><br>
+                <input type=text name="fname" id="fname" required/>
+                <br><br>
+                <label> Last Name: </label>
+                <br>
+                <input type=text name="lname" id="lname" required/>
+                <br><br>
+                <label>Phone: </label><br>
+               <input type="number" name="phone" id="phone" required/>
+                <br>
+                <br>
+                <label>Gender: </label><br>
+                <input type="text" name="gender" id="gender" required/>
+                <br>
+                <br>
+                <label>Password: </label><br>
+                <input type=password name="password" id="password" required/>
+                <br>
+                <br>
+                <label>College: </label><br>
+                <input type=text name="college" id="college" required/>
+                <br>
+                <br>
+                <label>Major: </label><br>
+                <input type=text name="major" id="major" required/>
+                <br>
+                <br>
+            </p>
 
             <div class="demo-form-row">
                 <input name="add_record" type="submit" value="Add"">
-
+            </div>
         </form>
-    </div>
+
     </div>
 </body>
 </html>
