@@ -76,11 +76,16 @@ function validateDescription() {
 
 function validateLogin() {
 	var username = document.forms["LoginForm"]["username"].value;
+	var password = document.forms["LoginForm"]["password"].value;
 	var emailSignLogin = username.includes("@");
 
 
 	if (username == "") {
 		alert ("Please enter an email address");
+		return false;
+	}
+	else if (password == "") {
+		alert ("Please enter a password.");
 		return false;
 	}
 	else if (emailSignLogin == false) {
