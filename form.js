@@ -8,7 +8,7 @@ function validateForm() {
 	var college = document.forms["form"]["college"].value;
 	var password = document.forms["form"]["password"].value;
 	var emailSign = email.includes("@");
-	
+
 	var fnamevalid1 = fname.includes("1");
 	var fnamevalid2 = fname.includes("2");
 	var fnamevalid3 = fname.includes("3");
@@ -74,3 +74,23 @@ function validateDescription() {
 	} 
 }
 
+function validateLogin() {
+	var username = document.forms["LoginForm"]["username"].value;
+	var password = document.forms["LoginForm"]["password"].value;
+	var emailSignLogin = username.includes("@");
+
+
+	if (username == "") {
+		alert ("Please enter an email address");
+		return false;
+	}
+	else if (password == "") {
+		alert ("Please enter a password.");
+		return false;
+	}
+	else if (emailSignLogin == false) {
+		alert("Please enter a valid email address.")
+		return false;
+	}
+
+}

@@ -14,7 +14,7 @@ if (!empty($_POST["add_record"])) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>index.html</title>
+    <title>Add a task!</title>
     <link href="main.css" rel="stylesheet" type="text/css">
     <script src="form.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -22,12 +22,12 @@ if (!empty($_POST["add_record"])) {
 <body>
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
-<div class="carousel" data-ride="carousel">
+<div id="slides" class="carousel" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="carousel-img.jpg" alt="img"/>
+            <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
             <div class="carousel-caption">
-                <h2 class="display-2">homework tracker</h2>
+                <h1 class="display-2">homework tracker</h1>
             </div>
         </div>
     </div>
