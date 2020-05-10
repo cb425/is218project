@@ -13,9 +13,10 @@
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
-            <th>isdone</th> 
             <th>createddate</th>
             <th>duedate</th>
+            <th>Completed?</th> 
+            
             
         
         </tr>";
@@ -25,12 +26,22 @@
         echo "<tr>
                     <td>".$result["id"]."</td>
                     <td>".$result["title"]."</td>
-                    <td>".$result["message"]."</td>
-                    <td>".$result["isdone"]."</td>  
+                    <td>".$result["message"]."</td> 
                     <td>".$result["createddate"]."</td>
-                    <td>".$result["duedate"]."</td>
-                    
-                  <td>
+                    <td>".$result["duedate"]."</td>";
+
+        if ($result["isdone"] == 0)
+        {
+            echo "<td>No</td>";
+        }
+
+        if ($result["isdone"] == 1)
+        {
+            echo "<td>Yes</td>";
+        }
+
+
+        echo "<td>
                    <a href=\"delete.php?id=$task\" class=\"edit\">Delete</a></td>  
                    <td>
                    <a href=\"edit.php?id=$task\" class=\"edit\">Edit</a></td>
@@ -39,6 +50,8 @@
 
 
     }
+
+    echo "<a href=\"add.php\">Add task</a>";
 
 
 

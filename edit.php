@@ -37,7 +37,7 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
     <script src="form.js"> </script>
 </head>
 <body>
-<div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
+<div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to Task List</a></div>
 
 <h1>Edit Task</h1>
 <form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
@@ -55,8 +55,8 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
     <input type=datetime-local name="duedate" id="duedate" value="<?=date('Y-m-d\TH:i', strtotime($theData['duedate']))?>" required/> <br><br>
 
     <div class="demo-form-row">
-        <input name="save" type="submit" value="Add"">
+        <input name="save" type="submit" value="Confirm changes"">
 
 </form>
 </div>
-</body></html>*/
+</body></html>

@@ -3,6 +3,8 @@ require "PDObject.php";
 global $conn;
 $msg = '';
 
+
+
 // Check that the contact ID exists
 if (isset($_GET['id'])) {
     // Select the record that is going to be deleted
@@ -11,6 +13,8 @@ if (isset($_GET['id'])) {
     $statement->execute();
     $statement->closeCursor();
     echo "Deleted!";
+
+    echo "<br><a href=\"homework_table.php\">Back to Task List</a>";
 }
 
 else {
