@@ -1,5 +1,5 @@
 <?php
-    require "PDObject.php";
+    require_once"PDObject.php";
 
     $query = 'SELECT * FROM todos ORDER BY duedate';
     $statement = $conn ->prepare($query);
@@ -7,6 +7,8 @@
     $accounts = $statement->fetchAll();
     $statement->closeCursor();
 ?>
+
+
 
 <!doctype html>
 <html>
@@ -18,6 +20,18 @@
 </head>
 
 <body>
+
+<?php
+
+            require_once"PDObject.php";
+            $query = 'SELECT * FROM accounts ORDER BY id DESC LIMIT 1';
+            $statement = $conn ->prepare($query);
+            $statement->execute();
+            $theData = $statement->fetch(PDO::FETCH_ASSOC);
+            $statement->closeCursor();
+
+            echo "User: ". $theData['fname']. " " . $theData['lname'];
+            ?>
 <center>
     <container>
 <h1>Homework Tracker</h1>
@@ -145,6 +159,7 @@ foreach ($accounts as $result) {
             }
 
             ?>
+
 
 
         </table>
