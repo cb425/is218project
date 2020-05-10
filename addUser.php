@@ -1,10 +1,10 @@
 <?php
 if(!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO accounts (email, fname, lname, phone, birthday, gender, passw, college, major) VALUES (:email, :fname, :lname, :phone, :birthday, :gender, :passw, :college, :major)";
+    $sql = "INSERT INTO accounts (email, fname, lname, phone, gender, password, college, major) VALUES (:email, :fname, :lname, :phone, :gender, :password, :college, :major)";
     $pdo_statement = $conn->prepare( $sql );
 
-    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':fname'=>$_POST['fname'],':lname'=>$_POST['lname'], ':phone'=>$_POST['phone'], ':birthday'=>$_POST['birthday'], ':gender'=>$_POST['gender'], ':passw'=>$_POST['passw'], ':college'=>$_POST['college'], ':major'=>$_POST['major']) );
+    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':fname'=>$_POST['fname'],':lname'=>$_POST['lname'], ':phone'=>$_POST['phone'], ':gender'=>$_POST['gender'], ':password'=>$_POST['password'], ':college'=>$_POST['college'], ':major'=>$_POST['major']) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
@@ -38,10 +38,7 @@ if(!empty($_POST["add_record"])) {
 		<br>
 		<label>Phone: </label><br>
         <input type="number" name="phone" id="phone" required />
-        <br>
-        <br>
-		<label>Birthday: </label><br>
-        <input type=text name="birthday" id="birthday" required />
+
         <br>
         <br>
 		<label>Gender: </label><br>
@@ -49,7 +46,7 @@ if(!empty($_POST["add_record"])) {
         <br>
         <br>
 		<label>Password: </label><br>
-        <input type=password name="passw" id="passw" required />
+        <input type=password name="password" id="password" required />
         <br>
         <br>
 		<label>College: </label><br>
