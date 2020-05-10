@@ -85,5 +85,13 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 
 </form>
 </div>
+
+<center>
+    <br><br>
+    <div class="footer">
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonifacio, Reesha Gandhi, Stuti Vyas</p>
+    </div>
+</center>
+
 </body>
 </html>

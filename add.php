@@ -38,7 +38,7 @@ if (!empty($_POST["add_record"])) {
 
 <div class="color-form">
     <div id="form" class="form-all">
-        <h1 class="addatask">Add task</h1>
+        <h1 class="title">Add task</h1>
         <form class="form" action="" method="POST" name="addTask" onSubmit="return validateDescription()">
             <label>Title: </label><br>
             <input type="text" name="title" id="title" required/>
@@ -63,9 +63,13 @@ if (!empty($_POST["add_record"])) {
     </div>
 </div>
 
-<div class="footer">
-    <p>Names: Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
-</div>
+<center>
+    <br>
+    <div class="footer">
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonifacio, Reesha Gandhi, Stuti Vyas</p>
+    </div>
+
+</center>
 
 </body>
 </html>

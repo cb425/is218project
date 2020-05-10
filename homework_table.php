@@ -82,7 +82,7 @@ foreach ($accounts as $result) {
 }
 ?>
 </table>
-    <p><a class="addbutton" href="add.php">Add a task</a></p>
+    <p><a class="addbutton" href="add.php">Add Assignment</a></p>
 
 
     <!-- INCOMPLETE TASK -->
@@ -167,7 +167,7 @@ foreach ($accounts as $result) {
 </container>
 
     <div class="footer">
-        <p>Copyright 2020 Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonifacio, Reesha Gandhi, Stuti Vyas</p>
     </div>
 
 </center>
