@@ -42,8 +42,8 @@ hr {
 }
 
 .carousel-inner img {
-	width: 1000px; /* width of container */
-	height: 400px; /* height of container */
+	width: 100%; /* width of container */
+	height: 75%; /* height of container */
 	object-fit: cover;
 }
 
@@ -94,6 +94,12 @@ hr {
 	font-size: 40px;
 	text-align: center;
 	padding-top: 20px; 
+}
+
+.addatask {
+	font-size: 40px;
+	text-align: center;
+	padding-top: 20px;
 }
 
 .form-text {
