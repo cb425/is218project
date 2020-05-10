@@ -36,7 +36,7 @@ else {
 <body>
 <center>
 <contains>
-    <br><a href=\"homework_table.php\">Back to Task List</a>
+    <br><a href="homework_table.php">Back to Task List</a>
 </contains>
 </center>
 
