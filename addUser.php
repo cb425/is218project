@@ -37,27 +37,27 @@ if(!empty($_POST["add_record"])) {
 		<br>
 		<br>
 		<label>Phone: </label><br>
-        <input type="number" name="fname" id="fname" required />
+        <input type="number" name="phone" id="phone" required />
         <br>
         <br>
 		<label>Birthday: </label><br>
-        <input type=text name="fname" id="fname" required />
+        <input type=text name="birthday" id="birthday" required />
         <br>
         <br>
 		<label>Gender: </label><br>
-        <input type="text" name="fname" id="fname" required />
+        <input type="text" name="gender" id="gender" required />
         <br>
         <br>
 		<label>Password: </label><br>
-        <input type=password name="fname" id="fname" required />
+        <input type=password name="passw" id="passw" required />
         <br>
         <br>
 		<label>College: </label><br>
-        <input type=text name="fname" id="fname" required />
+        <input type=text name="college" id="college" required />
         <br>
         <br>
 		<label>Major: </label><br>
-        <input type=text name="fname" id="fname" required />
+        <input type=text name="major" id="major" required />
         <br>
         <br>
 	
