@@ -1,10 +1,10 @@
 <?php
 if(!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO accounts (email, password) VALUES (:email, :password)";
+    $sql = "INSERT INTO accounts (email, fname, lname, phone, gender, password, college, major) VALUES (:email, :fname, :lname, :phone, :gender, :password, :college, :major)";
     $pdo_statement = $conn->prepare( $sql );
 
-    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':password'=>$_POST['password']) );
+    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':fname'=>$_POST['fname'],':lname'=>$_POST['lname'], ':phone'=>$_POST['phone'], ':gender'=>$_POST['gender'], ':password'=>$_POST['password'], ':college'=>$_POST['college'], ':major'=>$_POST['major']) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
