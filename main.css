@@ -71,6 +71,7 @@ hr {
 }
 
 .color-form {
+	margin-top: 75px;
 	padding-left: 250px;
 	padding-right: 250px;
 }
@@ -133,4 +134,17 @@ th {
 	border-radius: 5px;
 	border: 1px solid grey;
 
+}
+
+.footer {
+	margin-top: 150px;
+	width: 100%;
+	background-color: #222222;
+	color: #FFF7F7;
+	height: 100px;
+}
+
+.footer p {
+	text-align: center;
+	padding-top: 48px;
 }

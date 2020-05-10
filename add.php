@@ -57,5 +57,9 @@ if (!empty($_POST["add_record"])) {
     </div>
 </div>
 
+<div class="footer">
+    <p>Names: Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+</div>
+
 </body>
 </html>
