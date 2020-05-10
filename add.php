@@ -1,11 +1,11 @@
 <?php
-if(!empty($_POST["add_record"])) {
+if (!empty($_POST["add_record"])) {
     require "PDObject.php";
     $sql = "INSERT INTO todos (title, message,duedate, createddate, isdone) VALUES (:title, :message, :duedate, :createddate, :isdone)";
-    $pdo_statement = $conn->prepare( $sql );
+    $pdo_statement = $conn->prepare($sql);
 
-    $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':createddate' =>date("Y-m-d h:i:s"), ':isdone' => $_POST['isdone']) );
-    if (!empty($result) ){
+    $result = $pdo_statement->execute(array(':title' => $_POST['title'], ':message' => $_POST['message'], ':duedate' => $_POST['duedate'], ':createddate' => date("Y-m-d h:i:s"), ':isdone' => $_POST['isdone']));
+    if (!empty($result)) {
         header('location:homework_table.php');
     }
 }
@@ -16,7 +16,7 @@ if(!empty($_POST["add_record"])) {
     <meta charset="UTF-8">
     <title>index.html</title>
     <link href="main.css" rel="stylesheet" type="text/css">
-    <script src="form.js"> </script>
+    <script src="form.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,33 +27,40 @@ if(!empty($_POST["add_record"])) {
         <div class="carousel-item active">
             <img src="carousel-img.jpg" alt="img"/>
             <div class="carousel-caption">
-                <h1 class="display-2">homework tracker</h1>
+                <h2 class="display-2">homework tracker</h2>
             </div>
         </div>
     </div>
 </div>
 
+<div class="color-form">
+    <div id="form" class="form-all">
+        <h1 class="addatask">Add task</h1>
+        <form class="form" action="" method="POST" name="addTask" onSubmit="return validateDescription()">
+            <label>Title: </label><br>
+            <input type="text" name="title" id="title" required/>
+            <br>
+            <br>
+            <label>Description: </label><br>
+            <textarea name="message" id="message" rows="5" required></textarea>
+            <br>
+            <br>
+            <label for="duedate"> Due Date: </label>
+            <br>
+            <input type=datetime-local name="duedate" id="duedate" required/>
+            <br> <br>
+            <label for="isdone"> Completed? </label>
+            <input type="checkbox" id="isdone" name="isdone"/>
+            <br><br>
+            <input name="add_record" type="submit" value="Add"">
+            <br><br>
+        </form>
+    </div>
+</div>
 
-<h1>Add task</h1>
-<form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
-        <label>Title: </label><br>
-        <input  type="text" name="title" id="title" required/>
-        <br>
-        <br>
-        <label>Description: </label><br>
-        <textarea name="message" id="message" rows="5" required ></textarea>
+<div class="footer">
+    <p>Names: Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+</div>
 
-        <br>
-        <br>
-        <label for="duedate"> Due Date: </label>
-        <br>
-        <input type=datetime-local name="duedate" id="duedate" required/>
-        <br>
-        <label for="isdone"> Completed? </label>
-        <input type="checkbox" id="isdone" name="isdone"/>
-        <br><br>
-        <input name="add_record" type="submit" value="Add"">
-
-</form>
-
-</body></html>
+</body>
+</html>
