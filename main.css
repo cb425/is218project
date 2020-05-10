@@ -112,19 +112,41 @@ hr {
 
 table {
 	border-radius: 5px;
-	border: 2px solid black;
+	border: 2px solid #d786a5;
 	width: 550px!important;
+	background-color:pink;
+
+
 }
 
 td {
 
+	font-size: 16px;
+	background-color: white;
 	border-radius: 5px;
-	border: 1px solid lightgrey;
-
+	border-width: 2px;
+	border-style: solid;
+	border-color: pink;
+	padding: 5px 15px;
+	margin: 5px;
 }
 
 th {
+	font-size: 16px;
+	width: 150px;
+	color: white;
+	background-color: rgb(215, 134, 165);
 	border-radius: 5px;
-	border: 1px solid grey;
+	border-width: 2px;
+	border-style: solid;
+	border-color: pink;
+	padding: 10px
 
+}
+
+container
+{
+	display:block;
+	overflow:auto;
+	width:750px;
 }
