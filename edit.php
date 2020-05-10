@@ -39,7 +39,7 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 <body>
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
-<h1>Edit Task <?php echo $_GET['id']?></h1>
+<h1>Edit Task</h1>
 <form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
     <label>Title: </label><br>
     <input  type="text" name="title" id="title" value="<?php echo $theData['title'];?>" required/>
