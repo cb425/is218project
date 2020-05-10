@@ -38,8 +38,10 @@
                 <br> <br>
 
                 <button class="submit" type=submit value="login" formaction="homework_table.php">Login</button>
-                <button class="signup" type="button" value="SignUp" formaction="signup.html">Sign Up!</button>
             </p>
+        </form>
+        <form style="padding:10px;" class="form" name="signupbutton">
+            <button class="signup" type="submit" value="SignUp" formaction="signup.php">Sign Up!</button>
         </form>
     </div>
 </div>
