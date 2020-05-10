@@ -18,11 +18,13 @@
 </head>
 
 <body>
-<h1>Homework Tracker</h1>
-<p>refresh page to see changes</p>
-
 <center>
-<container>
+    <container>
+<h1>Homework Tracker</h1>
+
+
+
+
 <!-- ENTIRE TABLE -->
 <h3>Upcoming Assignments</h3>
 <table>
@@ -57,9 +59,9 @@ foreach ($accounts as $result) {
                     </td>";
     }
 
-    echo "<td>
+    echo "<td class=\"actionbutton\">
                    <a href=\"delete.php?id=$task\" class=\"edit\">Delete</a></td>  
-                   <td>
+                   <td  class=\"actionbutton\" >
                    <a href=\"edit.php?id=$task\" class=\"edit\">Edit</a></td>
                     
                </tr>";
@@ -95,9 +97,9 @@ foreach ($accounts as $result) {
                     <td>" . $result["createddate"] . "</td>
                     <td>" . $result["duedate"] . "</td>
                     <td>No</td>
-                    <td>
+                    <td class=\"actionbutton\">
                     <a href=\"delete.php?id=$task\" class=\"edit\">Delete</a></td>  
-                    <td>
+                    <td class=\"actionbutton\">
                     <a href=\"edit.php?id=$task\" class=\"edit\">Edit</a></td>
                     
                </tr>";
@@ -133,9 +135,9 @@ foreach ($accounts as $result) {
                     <td>" . $result["createddate"] . "</td>
                     <td>" . $result["duedate"] . "</td>
                     <td>Yes</td>
-                    <td>
+                    <td class=\"actionbutton\" >
                     <a href=\"delete.php?id=$task\" class=\"edit\">Delete</a></td>  
-                    <td>
+                    <td  class=\"actionbutton\">
                     <a href=\"edit.php?id=$task\" class=\"edit\">Edit</a></td>
                     
                </tr>";
@@ -150,7 +152,7 @@ foreach ($accounts as $result) {
 </container>
 
     <div class="footer">
-        <p>Names: Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
     </div>
 
 </center>

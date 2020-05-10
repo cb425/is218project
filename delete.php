@@ -12,9 +12,10 @@ if (isset($_GET['id'])) {
     $statement = $conn->prepare($query);
     $statement->execute();
     $statement->closeCursor();
-    echo "Deleted!";
+    echo "<center>Deleted!</center>";
 
-    echo "<br><a href=\"homework_table.php\">Back to Task List</a>";
+
+
 }
 
 else {
@@ -22,3 +23,22 @@ else {
 }
 
 ?>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>index.html</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<center>
+<contains>
+    <br><a href=\"homework_table.php\">Back to Task List</a>
+</contains>
+</center>
+
+</body>
+</html>
