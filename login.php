@@ -1,3 +1,16 @@
+<?php
+if(!empty($_POST["add_record"])) {
+    require "PDObject.php";
+    $sql = "INSERT INTO accounts (email, password) VALUES (:username, :password)";
+    $pdo_statement = $conn->prepare( $sql );
+
+    $result = $pdo_statement->execute( array(':username'=>$_POST['email'], ':password'=>$_POST['password']) );
+    if (!empty($result) ){
+        header('location:homework_table.php');
+    }
+}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -28,7 +41,7 @@
 <div class="color-form">
     <div id="form" class="form-all">
         <p class="subscribe"> login </p>
-        <form class="form" name="LoginForm" onsubmit="return validateLogin()">
+        <form class="form" action="" method="POST" name="LoginForm" onsubmit="return validateLogin()">
             <p class="form-text">
                 Username (email): <br>
                 <input type=text name="username"><br>

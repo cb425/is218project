@@ -33,7 +33,7 @@ if(!empty($_POST["add_record"])) {
 
 
 <h1>Sign up!</h1>
-<form action="" method="POST" name="signup" onsubmit="return validateForm()" onSubmit="return validateEmail()">
+<form action="" method="POST" name="signup" onsubmit="return validateForm()">
     <label>Email: </label><br>
     <input  type=email name="email" id="email" required/>
     <br>
