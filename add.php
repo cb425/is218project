@@ -19,7 +19,7 @@ if(!empty($_POST["add_record"])) {
 <div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
 
 <h1>Add task</h1>
-<form action="" method="POST" name="addTask" onSubmit="returm validateDescription()">
+<form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
 
         <label>Description: </label><br>
         <textarea name="message" class="demo-form-field" rows="5" required ></textarea>
@@ -29,7 +29,7 @@ if(!empty($_POST["add_record"])) {
         <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
         <div class="demo-form-row">
-        <input name="add_record" type="submit" value="Add" class="demo-form-submit">
+        <input name="add_record" type="submit" value="Add"">
 
 </form>
 </div>
