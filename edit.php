@@ -6,10 +6,10 @@ if (isset($_GET['id'])) {
         require_once "PDObject.php";
 
 
-        $sql = "UPDATE todos SET title =:title, message = :message, duedate= :duedate  WHERE id=". $_GET['id'];
+        $sql = "UPDATE todos SET title =:title, message = :message, duedate= :duedate, isdone = :isdone  WHERE id=". $_GET['id'];
         $pdo_statement = $conn->prepare( $sql );
 
-        $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate']) );
+        $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':isdone'=>$_POST['isdone']) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
@@ -52,7 +52,20 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
     <br>
     <label for="duedate"> Due Date: </label>
     <br>
-    <input type=datetime-local name="duedate" id="duedate" value="<?=date('Y-m-d\TH:i', strtotime($theData['duedate']))?>" required/> <br><br>
+    <input type=datetime-local name="duedate" id="duedate" value="<?=date('Y-m-d\TH:i', strtotime($theData['duedate']))?>" required/>
+    <br>
+    <?php
+        if ($theData['isdone'] == NULL) {
+            echo "<label for=\"isdone\"> Completed? </label>
+            <input type=\"checkbox\" id=\"isdone\" name=\"isdone\"/>";
+        }
+        else {
+            echo "<label for=\"isdone\"> Completed? </label>
+            <input checked=\"checked\" type=\"checkbox\" id=\"isdone\" name=\"isdone\"/>";
+        }
+    ?>
+
+    <br><br>
 
     <div class="demo-form-row">
         <input name="save" type="submit" value="Confirm changes"">

@@ -1,10 +1,10 @@
 <?php
 if(!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO todos (title, message,duedate, createddate) VALUES (:title, :message, :duedate, :createddate)";
+    $sql = "INSERT INTO todos (title, message,duedate, createddate, isdone) VALUES (:title, :message, :duedate, :createddate, :isdone)";
     $pdo_statement = $conn->prepare( $sql );
 
-    $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':createddate' =>date("Y-m-d h:i:s") ) );
+    $result = $pdo_statement->execute( array( ':title'=>$_POST['title'], ':message'=>$_POST['message'],':duedate'=>$_POST['duedate'], ':createddate' =>date("Y-m-d h:i:s"), ':isdone' => $_POST['isdone']) );
     if (!empty($result) ){
         header('location:homework_table.php');
     }
@@ -31,11 +31,13 @@ if(!empty($_POST["add_record"])) {
         <br>
         <label for="duedate"> Due Date: </label>
         <br>
-        <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
-
-        <div class="demo-form-row">
+        <input type=datetime-local name="duedate" id="duedate" required/>
+        <br>
+        <label for="isdone"> Completed? </label>
+        <input type="checkbox" id="isdone" name="isdone"/>
+        <br><br>
         <input name="add_record" type="submit" value="Add"">
 
 </form>
-</div>
+
 </body></html>
