@@ -20,40 +20,21 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-md navbar-dark bg-pink">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class="btn btn-colors" href="signout.html" role="button" aria-haspopup="true" aria-expanded="false">
-                        Sign out
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<?php
-
+            <!--user & signout button-->
+            <?php
             require_once"PDObject.php";
             $query = 'SELECT * FROM accounts ORDER BY id DESC LIMIT 1';
             $statement = $conn ->prepare($query);
             $statement->execute();
             $theData = $statement->fetch(PDO::FETCH_ASSOC);
             $statement->closeCursor();
-
-            echo "User: ". $theData['fname']. " " . $theData['lname'];
-            //echo "<br><a href=\"signout.html\">Signout</a>";
-            ?>
+            echo "<div class = \"info\">";
+            echo "User:<br>". $theData['fname']. " " . $theData['lname'];
+            echo "<br><a href=\"signout.html\">Sign Out</a> </div>";?>
 <center>
-    <container>
-<h1>Homework Tracker</h1>
 
+    <container>
+        <h1>Homework Tracker</h1>
 
 
 

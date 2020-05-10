@@ -21,23 +21,8 @@ if (!empty($_POST["add_record"])) {
 </head>
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-pink">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class="btn btn-colors" href="signout.html" role="button" aria-haspopup="true" aria-expanded="false">
-                        Sign out
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+<!-- signout button-->
+<div class="info"><a href="signout.html">Sign Out</a></div>
 
 
 <center>
@@ -54,10 +39,9 @@ if (!empty($_POST["add_record"])) {
     </div>
 </div>
     <a href="homework_table.php" class="addbutton">Back to List</a>
-</center>
 
-<div class="color-form">
-    <div id="form" class="form-all">
+
+<div class="task">
         <h1 class="title">Add task</h1>
         <form class="form" action="" method="POST" name="addTask" onSubmit="return validateDescription()">
             <label>Title: </label><br>
@@ -65,7 +49,7 @@ if (!empty($_POST["add_record"])) {
             <br>
             <br>
             <label>Description: </label><br>
-            <textarea name="message" id="message" rows="5" required></textarea>
+            <input type="text" name="message" id="message" rows="5" required/>
             <br>
             <br>
             <label for="duedate"> Due Date: </label>
@@ -80,9 +64,9 @@ if (!empty($_POST["add_record"])) {
             <input class="addbutton" name="add_record" type="submit" value="Add"">
             <br><br>
         </form>
-    </div>
-</div>
 
+</div>
+</center>
 <center>
     <br>
     <div class="footer">

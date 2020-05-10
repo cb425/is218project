@@ -27,7 +27,7 @@ $statement->execute();
 $theData = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <meta charset="UTF-8">
 <title>Add a task!</title>
 <link href="main.css" rel="stylesheet" type="text/css">
@@ -35,23 +35,8 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-md navbar-dark bg-pink">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class="btn btn-colors" href="signout.html" role="button" aria-haspopup="true" aria-expanded="false">
-                        Sign out
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!--sign out button-->
+<div class="info"><a href="signout.html">Sign Out</a></div>
 
 
 <center>
@@ -68,43 +53,47 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
     <a href="homework_table.php" class="addbutton">Back to List</a>
-</center>
-<h1>Edit Task</h1>
-<form action="" method="POST" name="addTask" onSubmit="return validateDescription()">
-    <label>Title: </label><br>
-    <input type="text" name="title" id="title" value="<?php echo $theData['title']; ?>" required/>
-    <br>
-    <br>
-    <label>Description: </label><br>
-    <input type="text" name="message" id="message" rows="5" value="<?php echo $theData['message'] ?>" required/>
 
-    <br>
-    <br>
-    <label for="duedate"> Due Date: </label>
-    <br>
-    <input type=datetime-local name="duedate" id="duedate"
+
+<div class="task">
+    <h1 class="title">Edit Task</h1>
+    <form class="form" action="" method="POST" name="addTask" onSubmit="return validateDescription()">
+        <label>Title: </label><br>
+        <input type="text" name="title" id="title" value="<?php echo $theData['title']; ?>" required/>
+        <br>
+        <br>
+        <label>Description: </label><br>
+        <input type="text" name="message" id="message" rows="5" value="<?php echo $theData['message'] ?>" required/>
+
+        <br>
+        <br>
+        <label for="duedate"> Due Date: </label>
+        <br>
+        <input type=datetime-local name="duedate" id="duedate"
            value="<?= date('Y-m-d\TH:i', strtotime($theData['duedate'])) ?>" required/>
-    <br>
-    <div style="float:left;">
-    <?php
-    if ($theData['isdone'] == NULL) {
-        echo "<label for=\"isdone\"> Completed? </label><br>
+        <br>
+        <br>
+        <div style="float:left;">
+        <?php
+        if ($theData['isdone'] == NULL) {
+            echo "<label for=\"isdone\"> Completed? </label><br>
             <input class=\"check\" type=\"checkbox\" id=\"isdone\" name=\"isdone\"/>";
-    } else {
-        echo "<label for=\"isdone\"> Completed? </label><br>
+        } else {
+            echo "<label for=\"isdone\"> Completed? </label><br>
             <input class=\"check\" checked=\"checked\" type=\"checkbox\" id=\"isdone\" name=\"isdone\"/>";
-    }
-    ?>
-    </div>
+        }
+        ?></div>
 
-    <br><br>
+
+    <br><br><br>
 
     <div class="demo-form-row">
-        <input name="save" type="submit" value="Confirm changes"">
+        <input name="save" class="addbutton" type="submit" value="Confirm"">
 
 </form>
-</div>
+    </div>
 
+</center>
 <center>
     <br><br>
     <div class="footer">

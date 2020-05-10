@@ -36,9 +36,8 @@ if (!empty($_POST["add_record"])) {
 <p></p>
 <p></p>
 
-
-<div class="color-form">
-    <div id="form" class="form-all">
+<center>
+<div class="task form">
         <p class="subscribe"> sign up! </p>
         <form class="form" action="" method="POST" name="signup" onsubmit="return validateForm()">
             <p class="form-text" class="subscribe">
@@ -75,10 +74,11 @@ if (!empty($_POST["add_record"])) {
             </p>
 
             <div class="demo-form-row">
-                <input name="add_record" type="submit" value="Add"">
+                <input name="add_record" type="submit" class="addbutton" value="Sign up"">
             </div>
         </form>
-
+</div>
     </div>
+</center>
 </body>
 </html>
