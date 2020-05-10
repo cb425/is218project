@@ -7,7 +7,9 @@ function validateForm() {
 	var major = document.forms["form"]["major"].value;
 	var college = document.forms["form"]["college"].value;
 	var password = document.forms["form"]["password"].value;
+	var username = document.forms["form"]["username"].value;
 	var emailSign = email.includes("@");
+	var emailSignLogin = username.includes("@");
 	
 	var fnamevalid1 = fname.includes("1");
 	var fnamevalid2 = fname.includes("2");
@@ -48,6 +50,10 @@ function validateForm() {
 		return false;
 	}
 	else if (emailSign == false) {
+		alert("Please enter a valid email address.")
+		return false;
+	}
+	else if (emailSignLogin == false) {
 		alert("Please enter a valid email address.")
 		return false;
 	}
