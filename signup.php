@@ -35,7 +35,7 @@ if (!empty($_POST["add_record"])) {
 <div class="color-form">
     <div id="form" class="form-all">
         <p class="subscribe"> sign up! </p>
-        <form action="" method="POST" name="signup" onsubmit="return validateForm()">
+        <form class="form" action="" method="POST" name="signup" onsubmit="return validateForm()">
             <p class="form-text" class="subscribe">
                 <label>Email: </label><br>
                 <input type=email name="email" id="email" required/>
