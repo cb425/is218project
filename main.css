@@ -241,3 +241,9 @@ input.check {
 	width:20px;
 	height:20px;
 }
+
+.title {
+	text-align:center;
+	margin-top:10px;
+	line-height: 70px;
+}

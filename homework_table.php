@@ -167,7 +167,7 @@ foreach ($accounts as $result) {
 </container>
 
     <div class="footer">
-        <p>Copyright 2020 Haydy Abdalla, Ross Bonafacio, Reesha Gandhi, Stuti Vyas</p>
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonifacio, Reesha Gandhi, Stuti Vyas</p>
     </div>
 
 </center>
