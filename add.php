@@ -20,7 +20,8 @@ if (!empty($_POST["add_record"])) {
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-<div style="margin:20px 0px;text-align:right;"><a href="homework_table.php" class="button_link">Back to List</a></div>
+<center>
+
 
 <div id="slides" class="carousel" data-ride="carousel">
     <div class="carousel-inner">
@@ -32,6 +33,8 @@ if (!empty($_POST["add_record"])) {
         </div>
     </div>
 </div>
+    <a href="homework_table.php" class="addbutton">Back to List</a>
+</center>
 
 <div class="color-form">
     <div id="form" class="form-all">
@@ -49,10 +52,12 @@ if (!empty($_POST["add_record"])) {
             <br>
             <input type=datetime-local name="duedate" id="duedate" required/>
             <br> <br>
-            <label for="isdone"> Completed? </label>
-            <input type="checkbox" id="isdone" name="isdone"/>
+            <label for="isdone"> Completed? </label><br>
+            <div style="float:left;">
+            <input type="checkbox" id="isdone" name="isdone" class="check"/>
+            </div>
             <br><br>
-            <input name="add_record" type="submit" value="Add"">
+            <input class="addbutton" name="add_record" type="submit" value="Add"">
             <br><br>
         </form>
     </div>

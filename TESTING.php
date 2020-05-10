@@ -1,12 +1,9 @@
 <?php
-$username = "cb425";
-$password = "Megurine123/";
-$hostname = "localhost";
+require "PDObject.php";
 
-/*connecting to the database*/
-$dbhandle = mysql_connect($hostname, $username, $password) or die("Could not connect to database");
 
-$selected = mysql_select_db("accounts", $dbhandle);
+
+$selected = mysql_select_db("accounts", $conn);
 
 /*Checking to see if the username exists already or not*/
 /*Not sure if this should be changed into 'email' instead of 'user'*/

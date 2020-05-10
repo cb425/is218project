@@ -82,7 +82,7 @@ foreach ($accounts as $result) {
 }
 ?>
 </table>
-    <p><a id="addbutton" href="add.php">Add a task</a></p>
+    <p><a class="addbutton" href="add.php">Add a task</a></p>
 
 
     <!-- INCOMPLETE TASK -->
