@@ -31,7 +31,7 @@ $result = $pdo_statement->fetchAll();
     <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
     <div class="demo-form-row">
-        <input name="add_record" type="submit" value="Add" class="demo-form-submit">
+        <input name="save_record" type="submit" value="Add" class="demo-form-submit">
 
 </form>
 </div>

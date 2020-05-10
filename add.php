@@ -1,5 +1,5 @@
 <?php
-if(!empty($_POST["add_record"])) {
+if(!empty($_POST["add"])) {
     require "PDObject.php";
     $sql = "INSERT INTO todos (message,duedate, createddate) VALUES ( :message, :duedate, :createddate)";
     $pdo_statement = $conn->prepare( $sql );
@@ -28,7 +28,7 @@ if(!empty($_POST["add_record"])) {
         <input type=datetime-local name="duedate" id="duedate" required/> <br><br>
 
         <div class="demo-form-row">
-        <input name="add_record" type="submit" value="Add" class="demo-form-submit">
+        <input name="add" type="submit" value="Add" class="demo-form-submit">
 
 </form>
 </div>
