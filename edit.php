@@ -27,7 +27,7 @@ $statement->execute();
 $theData = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
-<html xmlns="http://www.w3.org/1999/html">
+<!doctype html>
 <meta charset="UTF-8">
 <title>Add a task!</title>
 <link href="main.css" rel="stylesheet" type="text/css">
@@ -42,17 +42,10 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
 <center>
 
 
-    <div id="slides" class="carousel" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
-                <div class="carousel-caption">
-                    <h1 class="display-2">homework tracker</h1>
-                </div>
-            </div>
-        </div>
+    <div class="header">
+        <h1>homework tracker</h1>
     </div>
-    <a href="homework_table.php" class="addbutton">Back to List</a>
+    <a href="homework_table.php" style="margin-top:10px;" class="addbutton">Back to List</a>
 
 
 <div class="task">

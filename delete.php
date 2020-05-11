@@ -12,8 +12,6 @@ if (isset($_GET['id'])) {
     $statement = $conn->prepare($query);
     $statement->execute();
     $statement->closeCursor();
-    echo "<center>Deleted!</center>";
-
 
 
 }
@@ -34,13 +32,17 @@ else {
 </head>
 
 <body>
+<div class="header">
+    <h1>homework tracker</h1>
+</div>
 
 <!--signout button-->
 <div class="info"><a href="signout.html">Sign Out</a></div>
 
 <center>
 <contains>
-    <br><a href="homework_table.php">Back to Task List</a>
+    <h1>Deleted assignment!</h1>
+    <br><div class="addbutton"><a href="homework_table.php">Back to Task List</a></div>
 </contains>
 </center>
 

@@ -32,9 +32,11 @@
             echo "User:<br>". $theData['fname']. " " . $theData['lname'];
             echo "<br><a href=\"signout.html\">Sign Out</a> </div>";?>
 <center>
-
+    <div class="header">
+        <h1>homework tracker</h1>
+    </div>
     <container>
-        <h1>Homework Tracker</h1>
+
 
 
 
