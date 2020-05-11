@@ -63,6 +63,9 @@ if (!empty($_POST["add_record"])) {
         </form>
     </div>
     </div>
+    <div class="footer">
+        <p>Copyright 2020 Haydy Abdalla, Ross Bonifacio, Reesha Gandhi, Stuti Vyas</p>
+    </div>
 </center>
 </body>
 </html>
