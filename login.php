@@ -1,63 +1,68 @@
 <?php
-if(!empty($_POST["add_record"])) {
+if (!empty($_POST["add_record"])) {
     require "PDObject.php";
-    $sql = "INSERT INTO accounts (email, fname, lname, phone, gender, password, college, major) VALUES (:email, :fname, :lname, :phone, :gender, :password, :college, :major)";
-    $pdo_statement = $conn->prepare( $sql );
+    $sql = "INSERT INTO accounts (email, fname, lname, password) VALUES (:email, :fname, :lname, :password)";
+    $pdo_statement = $conn->prepare($sql);
 
-    $result = $pdo_statement->execute( array(':email'=>$_POST['email'], ':fname'=>$_POST['fname'],':lname'=>$_POST['lname'], ':phone'=>$_POST['phone'], ':gender'=>$_POST['gender'], ':password'=>$_POST['password'], ':college'=>$_POST['college'], ':major'=>$_POST['major']) );
-    if (!empty($result) ){
+    $result = $pdo_statement->execute(array(':email' => $_POST['email'], ':fname' => $_POST['fname'], ':lname' => $_POST['lname'], ':password' => $_POST['password']));
+    if (!empty($result)) {
         header('location:homework_table.php');
     }
 }
 ?>
-
-<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>login.html</title>
+    <title>Sign up</title>
     <link href="main.css" rel="stylesheet" type="text/css">
-    <script src="form.js"> </script>
+    <script src="form.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
 
+
+</head>
 <body>
 
-<div id="slides" class="carousel" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="rose"/>
-            <div class="carousel-caption">
-                <h1 class="display-2">homework tracker</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- to change the main top picture, change the link in img src tag above -->
-<!-- to change the link when clicking submit, change the formaction="this link" in button tag -->
 
 <center>
-<div class="form task">
-        <p class="subscribe"> login </p>
-        <form class="form" action="" method="POST" name="LoginForm" onsubmit="return validateLogin()">
-            <p class="form-text">
-                <label> Username (email):</label> <br>
-                <input type=text name="email"><br>
+    <div class="header">
+        <h1>homework tracker</h1>
+    </div>
+    <div class="task form">
+        <h1> sign up! </h1>
+        <form class="form" action="" method="POST" name="signup" onsubmit="return validateForm()">
+            <p class="form-text" class="subscribe">
+                <label>Email: </label><br>
+                <input type=email name="email" id="email" required/>
+                <br><br>
+                <label>First Name: </label><br>
+                <input type=text name="fname" id="fname" required/>
+                <br><br>
+                <label> Last Name: </label>
+                <br>
+                <input type=text name="lname" id="lname" required/>
+                <br>
                 <br>
                 <label>Password: </label><br>
-                <input type=password name="password"> <br>
-                <br> <br>
+                <input type=password name="password" id="password" required/>
+                <br>
+                <br>
 
-                <button class="addbutton" type=submit value="login" formaction="homework_table.php">Login</button>
             </p>
 
-            <button class="addbutton" type="submit" value="SignUp" formaction="signup.php">Sign Up!</button>
+            <div class="demo-form-row">
+                <input name="add_record" type="submit" class="addbutton" value="Login"">
+                <br>
+                <br>
+                <center><button type="reset" class="addbutton" value="Cancel">Cancel</button></center>
+                <br>
+                <br>
+                <input type="button" formaction="signup.php" class="addbutton" value="Sign up"></input>
+
+
+            </div>
         </form>
-        <p></p><br>
+    </div>
     </div>
 </center>
-
-
 </body>
 </html>

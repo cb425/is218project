@@ -49,34 +49,7 @@ a {
 	text-align: center;
 }
 
-.carousel-inner img {
-	width: 100%; /* width of container */
-	height: 300px; /* height of container */
-	object-fit: cover;
-}
 
-.carousel-caption {
-	position: absolute;
-	top: 150px;
-	transform: translateY(-50%);
-	width: 805px;
-	left: 274px;
-}
-
-.carousel-caption h1 {
-  font-size: 400%;
-  color:azure;
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: 1px 1px 10px #222;
-}
-
-.carousel-caption h3 {
-  font-size: 200%;
-  font-weight: 500;
-  text-shadow: 1px 1px 10px #000;
-  padding-bottom: 1rem;
-}
 
 .color-form {
 	padding-left: 250px;

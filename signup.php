@@ -17,28 +17,18 @@ if (!empty($_POST["add_record"])) {
     <link href="main.css" rel="stylesheet" type="text/css">
     <script src="form.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
 </head>
 <body>
 
-<div id="slides" class="carousel" data-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://pbs.twimg.com/media/DS9R26FW4AECxFD.jpg" alt="img"/>
-            <div class="carousel-caption">
-                <h1 class="display-2">homework tracker</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-<p></p>
-<p></p>
 
 <center>
+    <div class="header">
+        <h1>homework tracker</h1>
+    </div>
 <div class="task form">
-        <p class="subscribe"> sign up! </p>
+        <h1> sign up! </h1>
         <form class="form" action="" method="POST" name="signup" onsubmit="return validateForm()">
             <p class="form-text" class="subscribe">
                 <label>Email: </label><br>
