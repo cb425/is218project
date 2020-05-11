@@ -47,7 +47,7 @@ if (!empty($_POST["add_record"])) {
             <br>
             <label for="duedate"> Due Date: </label>
             <br>
-            <input type=date name="duedate" id="duedate" required/>
+            <input type=datetime-local name="duedate" id="duedate" required/>
             <br> <br>
             <label for="isdone"> Completed? </label><br>
             <div style="float:left;">

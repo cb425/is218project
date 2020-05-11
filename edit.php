@@ -62,8 +62,8 @@ $theData = $statement->fetch(PDO::FETCH_ASSOC);
         <br>
         <label for="duedate"> Due Date: </label>
         <br>
-        <input type=date name="duedate" id="duedate"
-           value="<?= date('Y-m-j', strtotime($theData['duedate'])) ?>" required/>
+        <input type=datetime-local name="duedate" id="duedate"
+           value="<?= date('Y-m-d\TH:i', strtotime($theData['duedate'])) ?>" required/>
         <br>
         <br>
         <div style="float:left;">
