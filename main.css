@@ -9,7 +9,8 @@ html {
 
 body {
 	background-repeat:repeat;
-	background-image:url("images/geometric-leaves.png")
+	background-image:url("images/geometric-leaves.png");
+	background-attachment: fixed;
 }
 	
 hr {
